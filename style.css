@@ -194,6 +194,7 @@ body {
     background-color: rgba(248, 42, 117, 0.14);
     box-shadow: 0 0 20px;
     color: rgb(16, 44, 87);
+    border-radius: 50px;
 }
 
 .aboutme-header h1 {
@@ -209,3 +210,35 @@ body {
     font-style: italic;
     letter-spacing: 4px;
 }
+
+.services-section {
+    background-color: #F5B7B7;
+    text-align: center;
+    padding: 30px
+}
+
+
+
+
+
+
+
+.review-section {
+    background-color: #F3A5A5;
+    text-align: center;
+    padding: 30px
+}
+
+
+
+
+
+
+
+.contact-section {
+    background-color: #F09393;
+    text-align: center;
+    padding: 30px;
+}
+
+
