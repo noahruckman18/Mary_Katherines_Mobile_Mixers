@@ -153,6 +153,7 @@ body {
     height: 900px;
     margin-top: 500px;
     padding-top: 50px;
+    padding-bottom: 50px;
     justify-content: center;
     align-items: center;
 }
@@ -162,6 +163,7 @@ body {
     height: 100%;
     position: relative;
     display: flex;
+    margin-bottom: 30px;
     justify-content: center;
     align-items: center;
 }
@@ -191,7 +193,6 @@ body {
     font-size: 25px;
     background-color: rgba(248, 42, 117, 0.14);
     box-shadow: 0 0 20px;
-
     color: rgb(16, 44, 87);
 }
 
