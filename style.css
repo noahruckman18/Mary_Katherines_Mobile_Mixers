@@ -19,6 +19,31 @@
     font-style: italic;
 }
 
+.cardo-regular {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.cardo-bold {
+    font-family: "Cardo", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.cardo-regular-italic {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.alex-brush-regular {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 * {
     margin: 0;
     padding: 0;
@@ -28,16 +53,123 @@
 body {
     background-color: rgb(247,193,193);
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
-.sldeshow {
-    height: 2048px;
-    width: 2048px;
+.header {
+    width: 100%;
+    height: 600px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.image-container {
+    justify-content: center;
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(75%);
+
+}
+
+.header-text {
+    border-radius: 20px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    width: 450px;
+    height: 100;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: auto;
+    margin-top: 300px;
+    background-color: rgba(0,0,0,0.2);
+    color: rgb(254, 238, 241);
+}
+
+.header-text:hover {
+    background-color: rgba(254, 238, 241, 0.448);
+    color: rgb(255, 255, 255);
+}
+
+.header-text h1 {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+}
+
+.header-text h2 {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.75rem;
+    padding: 0;
+}
+
+.header-anchors {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.header-anchors ul li {
+    margin: 0 10px;
+    list-style-type: none;
+    text-align: center;
+    display: inline;
+    font-family: "Cardo", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.header-anchors li a{
+    color: rgb(249, 212, 218);
+    text-decoration: none;
+}
+
+.header-anchors ul li a:hover {
+    color: rgb(16, 44, 87);
+    background-color: rgb(254, 238, 241);
+    font-size: 25px;   
+    padding: 3px;
+}
+
+.aboutme-section {
+    background-color: rgb(247,193,193);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 900px;
+    margin-top: 500px;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow-container {
+    width: 50%;
+    height: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+}
+
+.slideshowimages {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .slideshow-img {
@@ -47,50 +179,32 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    z-index: -1;
-    filter: brightness(50%);
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.header-text {
-    border-radius: 0.5rem;
-    padding: 2rem 2.5rem;
-    background-color: #00000080;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    margin-top: 300px;
-    width: 450px;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-}
-
-.header-text h1 {
-    font-size: 4rem;
-    margin-bottom: 0.75rem;
-}
-
-.header-text p {
-    font-size: 1.75rem;
-    padding: 0;
-}
-
-.header-selector {
-    color: white;
-}
-
-ul {
-    background-color: white;
-}
-
-li {
-    color: white;
-}
-
 .aboutme {
-    background-color: white;
-    margin-top: 400px;
-    height: 300px;
+    width: 50%;
+    padding: 20px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(248, 42, 117, 0.14);
+    box-shadow: 0 0 20px;
+
+    color: rgb(16, 44, 87);
 }
 
+.aboutme-header h1 {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 30px;
+}
+
+.aboutme-header p {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 4px;
+}
