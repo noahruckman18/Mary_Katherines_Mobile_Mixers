@@ -43,6 +43,13 @@
     font-style: normal;
   }
   
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 * {
     margin: 0;
@@ -51,7 +58,7 @@
 }
 
 body {
-    background-color: rgb(247,193,193);
+    background-color: #F8C9C9;
     color: white;
     margin: 0;
     padding: 0;
@@ -59,7 +66,7 @@ body {
 
 .header {
     width: 100%;
-    height: 600px;
+    height: 100vh;
     justify-content: center;
     justify-items: center;
     align-items: center;
@@ -146,12 +153,13 @@ body {
 }
 
 .aboutme-section {
-    background-color: rgb(247,193,193);
+    background-color: #F8C9C9;
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 900px;
-    margin-top: 500px;
+    height: 100vh;
+    margin-top: 200px;
+    margin-bottom: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
     justify-content: center;
@@ -202,20 +210,122 @@ body {
     font-weight: 400;
     font-style: normal;
     margin-bottom: 30px;
+    font-size: 85px;
+}
+
+.aboutme-text {
+    color: white;
 }
 
 .aboutme-header p {
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: italic;
-    letter-spacing: 4px;
+    letter-spacing: 3.6px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 .services-section {
-    background-color: #F5B7B7;
-    text-align: center;
-    padding: 30px
+    width: 100%;
+    height: 100vh;
+    background-color: #F6B7B7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    font-size: 25px;
 }
+
+.service-top {
+    align-self: start;
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin-top: 80px;
+}
+
+.myrate {
+    width: 50%;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 3.6px;
+    line-height: 80px;
+}
+
+.myrate-container {
+    margin-left: 60px
+}
+
+.myrate-header {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    text-align: right;
+}
+
+.myrate-price {
+    font-size: 50px;
+}
+
+.myrate h3 {
+    font-size: 20px;
+    color: black;
+}
+
+.picture-container {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.service-middle {
+    display: flex;
+    padding: 100px;
+    background-color: rgba(201, 255, 187, 0.885);
+}
+
+.service-bottom {
+    display: flex;
+    padding: 100px;
+    background-color: rgba(135, 220, 253, 0.885);
+} */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -224,21 +334,169 @@ body {
 
 
 .review-section {
-    background-color: #F3A5A5;
+    background-color: #F4A4A4;
     text-align: center;
-    padding: 30px
+    padding: 30px;
+    display: flex;
 }
 
+.review-container {
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    gap: 10rem;
+}
+  
+.container__left h1 {
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+.container__left p {
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+  
+.container__right {
+    display: grid;
+    gap: 2rem;
+}
+  
+.feedback {
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    background-color: white;
+    margin-right: 50px;
+}
+  
+.feedback img {
+    max-width: 50px;
+    border-radius: 100%;
+}
+ 
+.feedback:hover {
+    scale: 1.15;
+}
 
-
-
-
-
+.fb-content {
+    display: flex;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+    gap: 1rem;
+    letter-spacing: 2.5px;
+}
+  
+.fb-content span i {
+    font-size: 2rem;
+    color: #ff226f;
+}
+  
+.fb-details p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: rgb(16, 44, 87);
+}
+  
+.fb-details h4 {
+    text-align: right;
+    color: #ff226f;
+    font-size: 1rem;
+    font-weight: 500;
+}
 
 .contact-section {
     background-color: #F09393;
     text-align: center;
     padding: 30px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
 
+.contact-left h2 {
+    font-weight: 600;
+    color: rgb(16, 44, 87);
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: rgb(16, 44, 87);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-input {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: rgb(16, 44, 87);
+    border-radius: 50px;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+    box-shadow: 0 0 8px;
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contact-input:focus {
+    border: 2px solid rgb(16, 44, 87);
+    box-shadow: 0 0 10px;
+}
+
+.contact-input::placeholder {
+    color: rgb(16, 44, 87);
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, rgb(16, 44, 87), rgba(24, 67, 131, 0.718));
+    cursor: pointer;
+}
+
+.contact-left button:hover {
+    font-size: 20px;
+}
