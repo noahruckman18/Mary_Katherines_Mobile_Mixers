@@ -424,8 +424,7 @@ body {
 }
  
 .feedback:hover {
-    scale: 1.55;
-    margin: 100px;
+    scale: 1.15;
 }
 
 .fb-content {
