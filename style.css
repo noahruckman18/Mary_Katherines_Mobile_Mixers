@@ -199,7 +199,7 @@ body {
     margin-right: 20px;
     text-align: center;
     font-size: 25px;
-    background-color: rgba(248, 42, 117, 0.14);
+    background-color: #F8B3BE;
     box-shadow: 0 0 20px;
     color: rgb(16, 44, 87);
     border-radius: 50px;
@@ -338,6 +338,7 @@ body {
     text-align: center;
     padding: 30px;
     display: flex;
+    height: 100vh;
 }
 
 .review-container {
@@ -346,16 +347,50 @@ body {
     display: flex;
     gap: 10rem;
 }
-  
-.container__left h1 {
+
+.container-left {
+    width: 50%;
+    color: rgba(0, 0, 0, 0.824);
+    letter-spacing: 2.5px;
+}
+
+#talkbubble {
+    margin: 40px;
+    width: 100%;
+    height: 100%;
+    background: #F58FA0;
+    padding: 20px;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 30px;
+    line-height: 50px;
+  }
+  #talkbubble:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-right: 70px solid #F58FA0;
+    border-bottom: 35px solid transparent;
+  }
+
+.container-left h1 {
     margin-bottom: 2rem;
-    font-size: 3.5rem;
-    font-family: "Cardo", serif;
+    font-size: 90px;
+    font-family: "Alex Brush", cursive;
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
+    padding-bottom: 15px;
+    border-bottom-style: groove;
+    border-bottom-width: 5px;
+    border-bottom-color: white;
 }
   
-.container__left p {
+.container-left p {
     margin-bottom: 1rem;
     font-size: 1.5em;
     font-family: "Cardo", serif;
@@ -364,9 +399,10 @@ body {
 }
   
   
-.container__right {
+.container-right {
     display: grid;
     gap: 2rem;
+    width: 50%;
 }
   
 .feedback {
@@ -388,7 +424,8 @@ body {
 }
  
 .feedback:hover {
-    scale: 1.15;
+    scale: 1.55;
+    margin: 100px;
 }
 
 .fb-content {
@@ -408,7 +445,7 @@ body {
 .fb-details p {
     font-style: italic;
     margin-bottom: 1rem;
-    color: rgb(16, 44, 87);
+    color: rgba(0, 0, 0, 0.824);
 }
   
 .fb-details h4 {
@@ -438,13 +475,13 @@ body {
 .contact-left h2 {
     font-weight: 600;
     color: rgb(16, 44, 87);
-    font-size: 40px;
+    font-size: 60px;
     margin-bottom: 5px;
 }
 
 .contact-left hr {
     border: none;
-    width: 120px;
+    width: 180px;
     height: 5px;
     background-color: rgb(16, 44, 87);
     border-radius: 10px;
@@ -452,8 +489,8 @@ body {
 }
 
 .contact-input {
-    width: 400px;
-    height: 50px;
+    width: 450px;
+    height: 70px;
     border: none;
     outline: none;
     padding-left: 25px;
@@ -464,6 +501,7 @@ body {
     font-weight: 400;
     font-style: normal;
     box-shadow: 0 0 8px;
+    font-size: 30px;
 }
 
 .contact-left textarea {
@@ -473,6 +511,7 @@ body {
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 30px;
 }
 
 .contact-input:focus {
@@ -488,7 +527,7 @@ body {
     display: flex;
     align-items: center;
     padding: 15px 30px;
-    font-size: 16px;
+    font-size: 24px;
     color: white;
     gap: 10px;
     border: none;
@@ -498,5 +537,5 @@ body {
 }
 
 .contact-left button:hover {
-    font-size: 20px;
+    font-size: 28px;
 }
