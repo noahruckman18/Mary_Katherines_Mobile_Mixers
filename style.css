@@ -1,177 +1,57 @@
-:root {
-    --Background: linear-gradient(90deg, rgba(244,159,213,1) 0%, rgba(255,96,96,1) 40%, rgba(255,189,96,1) 75%);
-}
-
-@font-face {
-    font-family: DancingScript;
-    src: url(DancingScript-VariableFont_wght.ttf);
-}
-
-.sansita-regular-italic {
-    font-family: "Sansita", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.taviraj-extralight-italic {
-    font-family: "Taviraj", serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.cardo-regular {
-    font-family: "Cardo", serif;
+/* Headers*/
+.alex-brush-regular { 
+    font-family: "Alex Brush", cursive;
     font-weight: 400;
     font-style: normal;
 }
-  
+
+/* Links */
 .cardo-bold {
     font-family: "Cardo", serif;
     font-weight: 700;
     font-style: normal;
 }
   
+/* Paragraphs */
 .cardo-regular-italic {
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: italic;
 }
 
-.alex-brush-regular {
-    font-family: "Alex Brush", cursive;
+/* Paraghraphs */
+.cardo-normal {
+    font-family: "Cardo", serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
-.lobster-regular {
-  font-family: "Lobster", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
-
-
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #F8C9C9;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
-
-.header {
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-
-
-.image-container {
-    justify-content: center;
-}
-
-.img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(75%);
-
-}
-
-.header-text {
-    border-radius: 20px;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    width: 450px;
-    height: 100;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    margin: auto;
-    margin-top: 300px;
-    background-color: rgba(0,0,0,0.2);
-    color: rgb(254, 238, 241);
-}
-
-.header-text:hover {
-    background-color: rgba(254, 238, 241, 0.448);
-    color: rgb(255, 255, 255);
-}
-
-.header-text h1 {
-    font-family: "Alex Brush", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 4rem;
-    margin-bottom: 0.75rem;
-}
-
-.header-text h2 {
-    font-family: "Alex Brush", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.75rem;
-    padding: 0;
-}
-
-.header-anchors {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.header-anchors ul li {
-    margin: 0 10px;
-    list-style-type: none;
-    text-align: center;
-    display: inline;
     font-family: "Cardo", serif;
-    font-weight: 700;
+    font-weight: 400;
     font-style: normal;
-}
-
-.header-anchors li a{
-    color: rgb(249, 212, 218);
-    text-decoration: none;
-}
-
-.header-anchors ul li a:hover {
     color: rgb(16, 44, 87);
-    background-color: rgb(254, 238, 241);
-    font-size: 25px;   
-    padding: 3px;
+}
+
+.header, .image-container {
+    display: none;
 }
 
 .aboutme-section {
-    background-color: #F8C9C9;
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100vh;
-    margin-top: 200px;
-    margin-bottom: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #F8C9C9;
+    width: 100%;
+    height: 100%;
 }
 
 .slideshow-container {
-    width: 50%;
-    height: 100%;
-    position: relative;
+    width: 100%;
+    height: 500px; 
+    position: relative; 
     display: flex;
-    margin-bottom: 30px;
     justify-content: center;
     align-items: center;
 }
@@ -179,43 +59,73 @@ body {
 .slideshowimages {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: relative; 
 }
 
+
 .slideshow-img {
-    position: absolute;
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    object-fit: cover;
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
 }
 
-.aboutme {
-    width: 50%;
-    padding: 20px;
-    margin-right: 20px;
-    text-align: center;
-    font-size: 25px;
-    background-color: #F8B3BE;
-    box-shadow: 0 0 20px;
-    color: rgb(16, 44, 87);
-    border-radius: 50px;
+.slideshow-img:first-child {
+    opacity: 1; 
 }
 
-.aboutme-header h1 {
+.slideshow-text {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: rgb(255, 255, 255); 
+    text-align: center; 
+    background-color: rgba(0, 0, 0, 0.2);  
+    border-radius: 10px;
+}
+
+.slideshow-text h2 {
+    margin: 0; 
+    font-size: 2em;
+    color: rgb(254, 238, 241);
     font-family: "Alex Brush", cursive;
     font-weight: 400;
     font-style: normal;
-    margin-bottom: 30px;
-    font-size: 85px;
+    font-size: 55px;
+}
+
+.aboutme {
+    display: flex;
+    align-items: flex-end;
+    background-color: #F8B3BE;
+    width: 80%;
+    height: 40%;
+    border-radius: 20px;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 0 20px 0 ;
+}
+
+.aboutme-header h1 {
+    margin-top: 50px;
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
 }
 
 .aboutme-text {
     color: rgb(16, 44, 87);
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
 
 .aboutme-header p {
     font-family: "Cardo", serif;
@@ -224,163 +134,184 @@ body {
     letter-spacing: 3.6px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .services-section {
+    text-align: center;
+    padding: 25px 0 75px 0;
     width: 100%;
-    height: 100vh;
+    margin: auto;
     background-color: #F6B7B7;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    column-gap: 10px;
-    row-gap: 10px;
-    font-size: 25px;
 }
 
-.service-top {
-    align-self: start;
-    width: 100%;
-    position: relative;
-    display: flex;
-    margin-top: 80px;
-}
-
-.myrate {
-    width: 50%;
-    font-family: "Cardo", serif;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: 3.6px;
-    line-height: 80px;
-}
-
-.myrate-container {
-    margin-left: 60px
-}
-
-.myrate-header {
+.services-section h1 {
     font-family: "Alex Brush", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 50px;
-    text-align: right;
+    font-size: 60px;
 }
 
-.myrate-price {
-    font-size: 50px;
+.services-section h3 {
+    font-family: "Cardo", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
 }
 
-.myrate h3 {
-    font-size: 20px;
-    color: black;
-}
-
-.picture-container {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-.service-middle {
+.rate-container {
+    padding: 30px;
     display: flex;
-    padding: 100px;
-    background-color: rgba(201, 255, 187, 0.885);
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
-.service-bottom {
+.hourly-rate {
     display: flex;
-    padding: 100px;
-    background-color: rgba(135, 220, 253, 0.885);
-} */
+}
 
+.hourly-price {
+    padding-left: 50px;
+}
 
+.distance {
+    display: flex;
+}
 
+.distance-price {
+    padding-left: 20px;
+}
 
+.security {
+    display: flex;
+}
 
+.security-price {
+    padding-left: 40px;
+}
 
+#container {
+    padding: 10px 10px 10px 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    height: 150px;
+    align-items: center;
+    background-color: rgba(249, 236, 236, 0.923);
+    border-radius: 1rem;
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
+    color: rgb(16, 44, 87);
+}
 
+#container h1 {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
 
+#container p {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
 
+.provide-container {
+    width: 100%;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
 
+.provide-list {
+    padding: 10px 10px 10px 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    align-items: center;
+    background-color: rgba(249, 236, 236, 0.923);
+    border-radius: 1rem;
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
+    color: rgb(16, 44, 87);
+    line-height: 30px;
+    list-style: none;
+}
 
+.provide-list ul {
+    list-style: none;
+    padding: 10px;
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
 
+.provide-list li {
+    position: relative; 
+    margin-bottom: 10px; 
+    font-size: 1em;
+    padding-left: 70px; 
+}
 
-
-
+.provide-list li::before {
+    content: "\2714";
+    color: rgb(234, 170, 245);
+    position: absolute;
+    left: 0; /* Position the checkmark to the left */
+    top: 0;
+    margin-left: 10%;
+}
 
 
 
 .review-section {
+    padding-top: 30px;
+    padding-bottom: 40px;
     background-color: #F4A4A4;
     text-align: center;
-    padding: 30px;
     display: flex;
-    height: 100vh;
 }
 
 .review-container {
     margin: auto;
     padding: 1rem;
-    display: flex;
-    gap: 10rem;
+    margin-bottom: 50px;
 }
 
 .container-left {
-    width: 50%;
+    width: 100%;
     color: rgb(16, 44, 87);
     letter-spacing: 2.5px;
 }
 
 #talkbubble {
-    margin: 40px;
+    margin: auto;
     width: 100%;
     height: 100%;
-    background: #F58FA0;
-    padding: 20px;
+    background-color: #F58FA0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     position: relative;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 30px;
-    line-height: 50px;
-  }
-  #talkbubble:before {
+    line-height: 25px;
+}
+
+#talkbubble:before {
     content: "";
     position: absolute;
-    right: 100%;
-    top: 50%;
+    top: 100%;
+    left: 45%;
     width: 0;
     height: 0;
-    border-top: 35px solid transparent;
-    border-right: 70px solid #F58FA0;
-    border-bottom: 35px solid transparent;
-  }
+    border-left: 15px solid transparent;
+    border-top: 50px solid #F58FA0;
+    border-right: 15px solid transparent;
+}
 
 .container-left h1 {
     margin-bottom: 2rem;
-    font-size: 90px;
+    font-size: 50px;
     font-family: "Alex Brush", cursive;
     font-weight: 400;
     font-style: normal;
@@ -392,39 +323,26 @@ body {
   
 .container-left p {
     margin-bottom: 1rem;
-    font-size: 1.5em;
+    font-size: 1em;
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: normal;
 }
-  
-  
+
 .container-right {
-    display: grid;
-    gap: 2rem;
-    width: 50%;
+    margin-top: 80px;
+    width: 100%;
 }
-  
+
 .feedback {
-    padding: 2rem;
-    display: flex;
-    align-items: flex-start;
+    padding: 10px;
+    align-items: center;
+    background-color: rgba(249, 236, 236, 0.923);
     gap: 2rem;
-    background-color: white;
     border-radius: 1rem;
     box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
     cursor: pointer;
-    background-color: white;
-    margin-right: 50px;
-}
-  
-.feedback img {
-    max-width: 50px;
-    border-radius: 100%;
-}
- 
-.feedback:hover {
-    scale: 1.15;
+    margin-top: 50px;
 }
 
 .fb-content {
@@ -435,9 +353,14 @@ body {
     gap: 1rem;
     letter-spacing: 2.5px;
 }
-  
+
+.feedback img {
+    max-width: 50px;
+    border-radius: 100%;
+}
+
 .fb-content span i {
-    font-size: 2rem;
+    font-size: 25x;
     color: #ff226f;
 }
   
@@ -458,9 +381,11 @@ body {
     background-color: #F09393;
     text-align: center;
     padding: 30px;
-    height: 100vh;
     display: flex;
     align-items: start;
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .contact-left {
@@ -474,43 +399,44 @@ body {
 .contact-left h2 {
     font-weight: 600;
     color: rgb(16, 44, 87);
-    font-size: 60px;
+    font-size: 30px;
     margin-bottom: 5px;
 }
 
 .contact-left hr {
     border: none;
-    width: 180px;
-    height: 5px;
+    width: 54px;
+    height: 3px;
     background-color: rgb(16, 44, 87);
     border-radius: 10px;
     margin-bottom: 20px;
+    margin-right: 100px
 }
 
 .contact-input {
-    width: 600px;
-    height: 100px;
+    width: 200px;
+    height: 30px;
     border: none;
     outline: none;
     padding-left: 25px;
     font-weight: 500;
-    color: rgb(16, 44, 87);
+    color: rgb((16, 44, 87));
     border-radius: 50px;
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: normal;
     box-shadow: 0 0 8px;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .contact-left textarea {
-    height: 300px;
+    height: 150px;
     padding-top: 15px;
     border-radius: 30px;
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .contact-input:focus {
@@ -525,9 +451,9 @@ body {
 .contact-left button {
     display: flex;
     align-items: center;
-    padding: 15px 30px;
-    font-size: 24px;
-    color: white;
+    padding: 7px 15px;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
     gap: 10px;
     border: none;
     border-radius: 50px;
@@ -535,18 +461,32 @@ body {
     cursor: pointer;
 }
 
+.ri-arrow-right-line {
+    color: white;
+}
+
 .contact-left button:hover {
-    font-size: 28px;
+    font-size: 18px;
 }
 
 footer {
+    border-top: none;
+    display: flex;
     background-color: #F09393;
     text-align: center;
     color: rgb(16, 44, 87);
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    line-height: 12px;
+    padding-bottom: 20px;
+}
+
 footer h1 {
-    font-size: 100px;
+    font-size: 50px;
     margin-bottom: 50px;
     font-family: "Alex Brush", cursive;
     font-weight: 400;
@@ -555,6 +495,234 @@ footer h1 {
 }
 
 footer i {
-    font-size: 150px;
+    font-size: 45px;
     margin: 15px;
+}
+
+footer a {
+    color: rgb(16, 44, 87);
+}
+
+footer a:link {
+    text-decoration: none;
+    color: rgb(16, 44, 87);
+}
+
+footer a:visited {
+    text-decoration: none;
+    color: rgb(16, 44, 87);
+}
+footer a:hover {
+    text-decoration: none;
+    color: rgb(24, 70, 139);
+}
+footer a:active {
+    text-decoration: none;
+    color: rgb(16, 44, 87);
+}
+
+@media screen and (min-width: 768px)  {
+    
+    body {
+        background-color: #F8C9C9;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Header Nav Picture */
+    .header {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        margin: none;
+    }
+    
+    
+    .image-container {
+        display: block;
+        justify-content: center;
+        margin: none;
+    }
+    
+    .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(75%);
+    
+    }
+    
+    .header-text {
+        border-radius: 20px;
+        letter-spacing: 0.1rem;
+        text-align: center;
+        width: 450px;
+        padding: .5px 2px .5px 2px;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin: auto;
+        margin-top: 250px;
+        background-color: rgba(0,0,0,0.2);
+        color: rgb(254, 238, 241);
+    }
+    
+    .header-text:hover {
+        background-color: rgba(254, 238, 241, 0.448);
+        color: rgb(255, 255, 255);
+    }
+    
+    .header-text h1 {
+        font-family: "Alex Brush", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 60px;
+        margin: none;
+        line-height: 75px;
+        letter-spacing: 3px;
+    }
+    
+    .header-text h2 {
+        font-family: "Alex Brush", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.75rem;
+        padding: 0;
+    }
+    
+    .header-anchors {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 23px;
+    }
+    
+    .header-anchors ul li {
+        margin: 0 10px;
+        list-style-type: none;
+        text-align: center;
+        display: inline;
+        font-family: "Cardo", serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+    
+    .header-anchors li a{
+        color: rgb(249, 212, 218);
+        text-decoration: none;
+    }
+    
+    .header-anchors ul li a:hover {
+        color: rgb(16, 44, 87);
+        background-color: rgb(254, 238, 241);
+        font-size: 30px;
+    }
+
+    /* AboutMe Section */
+    .aboutme-section {
+        flex-direction: row;
+        width: 100%;
+        height: 100vh;
+        margin: none;
+    }
+    
+    .slideshow-container {
+        width: 50%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        margin-left: 15px;
+    }
+
+    .slideshow-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    .slideshow-text {
+        display: none;
+    }
+
+    .aboutme {
+        width: 50%;
+        padding: 80px 5px 20px 5px;
+        margin: 0 10px 0 10px;
+        text-align: center;
+        font-size: 15px;
+        box-shadow: 0 0 20px;
+        border-radius: 40px;
+    }
+    
+    .aboutme-header h1 {
+        font-family: "Alex Brush", cursive;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: 30px;
+        font-size: 50px;
+        margin: 20px;
+    }
+    
+    .aboutme-header p {
+        font-family: "Cardo", serif;
+        font-weight: 400;
+        font-style: italic;
+        letter-spacing: 2px;
+    }
+
+    #container {
+        width: 50%;
+    }
+    
+    /* Review Section */
+    
+    .review-container {
+        margin: auto;
+        padding: 1rem;
+        display: flex;
+    }
+    
+    .container-left {
+        width: 50%;
+        color: rgb(16, 44, 87);
+        letter-spacing: 2px;
+    }
+
+    #talkbubble {
+        margin: 40px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        align-self: center;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 30px;
+        line-height: 38px;
+    }
+
+    #talkbubble::before {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .aboutme {
+        padding: 80px 5px 20px 5px;
+        font-size: 18px;
+    }
+
+    #container {
+        width: 50%;
+    }
 }
