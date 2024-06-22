@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function submitForm() {
     var frm = document.getElementsByName('contact-form')[0];
     frm.submit(); // Submit the form
-    frm.reset();  // Reset all form data
+    setTimeout(function(){
+        frm.reset(); // Reset all form data
+    },  2000);
     return True; // Prevent page refresh
  }  
 
