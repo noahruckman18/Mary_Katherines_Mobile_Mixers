@@ -1,0 +1,278 @@
+@font-face {
+    font-family: State;
+    src: url(fonts/State.otf);
+}
+@font-face {
+    font-family: Callite;
+    src: url(fonts/Callite.otf);
+}
+@font-face {
+    font-family: Bride;
+    src: url(fonts/The\ Bride\ in\ Hacienda.ttf);
+}
+@font-face {
+    font-family: Ranchino;
+    src: url(fonts/RanchinoScript.otf);
+}
+@font-face {
+    font-family: Destiny;
+    src: url(fonts/The\ Destiny.otf);
+}
+@font-face {
+    font-family: Grand;
+    src: url(fonts/GrandParadisoScript-Regular.ttf);
+}
+@font-face {
+    font-family: Hello;
+    src: url(fonts/Hello\ Mellinda\ Demo.ttf);
+}
+@font-face {
+    font-family: Gastiella;
+    src: url(fonts/Gastiella\ Malinka.otf);
+}
+@font-face {
+    font-family: Octavie;
+    src: url(fonts/Octavie.otf);
+}
+@font-face {
+    font-family: Patrick;
+    src: url(fonts/Patrick\ Tonight.otf);
+}
+@font-face {
+    font-family: Brilliant;
+    src: url(fonts/Brilliant.otf);
+}
+@font-face {
+    font-family: Bestfriend;
+    src: url(fonts/Bestfriend\ Signature.ttf);
+}
+@font-face {
+    font-family: Greshian;
+    src: url(fonts/Greshian_DEMO.ttf);
+}
+@font-face {
+    font-family: Garden;
+    src: url(fonts/GardenOfHeaven-Script.otf);
+}
+@font-face {
+    font-family: Whitestone;
+    src: url(fonts/WhitestoneFormal_PERSONAL_USE_ONLY.otf);
+}
+@font-face {
+    font-family: Battipaglia;
+    src: url(fonts/Battipaglia.otf);
+}
+@font-face {
+    font-family: Anatasha;
+    src: url(fonts/Anatasha\ Trial.otf);
+}
+@font-face {
+    font-family: Marchiel;
+    src: url(fonts/Marchiel.otf);
+}
+@font-face {
+    font-family: Angelist;
+    src: url(fonts/Angelist.ttf);
+}
+@font-face {
+    font-family: Married;
+    src: url(fonts/Get\ Married\ TTF.ttf);
+}
+@font-face {
+    font-family: Romeria;
+    src: url(fonts/RomeriaNotes_PERSONAL_USE_ONLY.otf);
+}
+@font-face {
+    font-family: Bolchanitas;
+    src: url(fonts/Bolchanitas\ Voligate.otf);
+}
+
+#f1 {
+    font-family: "State";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f2 {
+    font-family: "Callite";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f3 {
+    font-family: "Bride";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f4 {
+    font-family: "Ranchino";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f5 {
+    font-family: "Destiny";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f6 {
+    font-family: "Grand";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f7 {
+    font-family: "Hello";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f8 {
+    font-family: "Gastiella";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f9 {
+    font-family: "Octavie";
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+#f10 {
+    font-family: "Patrick";
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+#f11 {
+    font-family: "Brilliant";
+    letter-spacing: 3px;
+    font-size: 75px;
+}
+#f12 {
+    font-family: "Bestfriend";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f13 {
+    font-family: "Greshian";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f14 {
+    font-family: "Garden";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f15 {
+    font-family: "Whitestone";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f16 {
+    font-family: "Battipaglia";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f17 {
+    font-family: "Anatasha";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f18 {
+    font-family: "Marchiel";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f19 {
+    font-family: "Angelist";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f20 {
+    font-family: "Married";
+    letter-spacing: 3px;
+    line-height: 50px;
+    font-size: 20px;
+}
+#f21 {
+    font-family: "Romeria";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+#f22 {
+    font-family: "Bolchanitas";
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+
+body {
+    background-color: rgba(248, 193, 202, 0.848);
+    color: rgb(16, 44, 87);
+    text-align: center;
+}
+
+body p {
+    font-size: 30px;
+}
+
+.state {
+    border: 2px solid blue;
+}
+.callite {
+    border: 2px solid blue;
+}
+.bride {
+    border: 2px solid blue;
+}
+.ranchino {
+    border: 2px solid blue;
+}
+.destiny {
+    border: 2px solid blue;
+}
+.grand {
+    border: 2px solid blue;
+}
+.hello {
+    border: 2px solid blue;
+}
+.gastiella {
+    border: 2px solid blue;
+}
+.octavie {
+    border: 2px solid blue;
+}
+.patrick {
+    border: 2px solid blue;
+}
+.brilliant {
+    border: 2px solid blue;
+}
+.bestfriend {
+    border: 2px solid blue;
+}
+.greshian {
+    border: 2px solid blue;
+}
+.garden {
+    border: 2px solid blue;
+}
+.whitestone {
+    border: 2px solid blue;
+}
+.battipaglia {
+    border: 2px solid blue;
+}
+.anatasha {
+    border: 2px solid blue;
+}
+.marchiel {
+    border: 2px solid blue;
+}
+.angelist {
+    border: 2px solid blue;
+}
+.married {
+    border: 2px solid blue;
+}
+.romeria {
+    border: 2px solid blue;
+}
+.bolchanitas {
+    border: 2px solid blue;
+}
