@@ -20,7 +20,7 @@ function submitForm() {
     frm.submit(); // Submit the form
     setTimeout(function(){
         frm.reset(); // Reset all form data
-    },  2000);
+    },  1000);
     return True; // Prevent page refresh
  }  
 
