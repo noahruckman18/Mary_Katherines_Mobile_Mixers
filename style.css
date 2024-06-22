@@ -104,12 +104,13 @@
     align-items: flex-end;
     background-color: #F8B3BE;
     width: 80%;
-    height: 40%;
     border-radius: 20px;
     font-size: 20px;
     justify-content: center;
     text-align: center;
-    margin: 20px 0 20px 0 ;
+    letter-spacing: 2.5px;
+    line-height: 25px;
+    margin: 20px 0 20px 0;
 }
 
 .aboutme-header h1 {
@@ -131,7 +132,6 @@
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: italic;
-    letter-spacing: 3.6px;
 }
 
 .services-section {
@@ -657,7 +657,7 @@ footer a:active {
 
     .aboutme {
         width: 50%;
-        padding: 80px 5px 20px 5px;
+        padding: 20px 5px 20px 5px;
         margin: 0 10px 0 10px;
         text-align: center;
         font-size: 15px;
@@ -679,6 +679,7 @@ footer a:active {
         font-weight: 400;
         font-style: italic;
         letter-spacing: 2px;
+        color: rgb(16, 44, 87);
     }
 
     #container {
@@ -725,6 +726,4 @@ footer a:active {
     #container {
         width: 50%;
     }
-
-    /* Just trying to refresh Github CSS File */
 }
