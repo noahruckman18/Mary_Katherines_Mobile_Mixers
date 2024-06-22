@@ -1,6 +1,10 @@
 @font-face {
-    font-family: LovelyCoffee;
+    font-family: State;
     src: url(fonts/State.otf);
+}
+@font-face {
+    font-family: Anatasha;
+    src: url(fonts/Anatasha\ Trial.otf);
 }
 
 /* Headers*/
@@ -96,12 +100,9 @@
 
 .slideshow-text h2 {
     margin: 0; 
-    font-size: 2em;
-    color: rgb(254, 238, 241);
-    font-family: "Alex Brush", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 55px;
+    color: rgba(254, 238, 241, 0.823);
+    font-family: "Anatasha";
+    font-size: 40px;
 }
 
 .aboutme {
@@ -110,7 +111,7 @@
     background-color: #F8B3BE;
     width: 80%;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 18px;
     justify-content: center;
     text-align: center;
     letter-spacing: 2.5px;
@@ -120,10 +121,10 @@
 
 .aboutme-header h1 {
     margin-top: 50px;
-    font-family: "LovelyCoffee";
+    font-family: "Anatasha";
     font-weight: 400;
     font-style: normal;
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .aboutme-text {
@@ -148,10 +149,8 @@
 }
 
 .services-section h1 {
-    font-family: "Alex Brush", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 60px;
+    font-family: "Anatasha";
+    font-size: 45px;
 }
 
 .services-section h3 {
@@ -220,6 +219,7 @@
     font-size: 15px;
 }
 
+
 .provide-container {
     width: 100%;
     font-family: "Cardo", serif;
@@ -267,7 +267,6 @@
 }
 
 
-
 .review-section {
     padding-top: 30px;
     padding-bottom: 40px;
@@ -277,6 +276,8 @@
 }
 
 .review-container {
+    display: flex;
+    flex-direction: column;
     margin: auto;
     padding: 1rem;
     margin-bottom: 50px;
@@ -288,66 +289,41 @@
     letter-spacing: 2.5px;
 }
 
-#talkbubble {
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background-color: #F58FA0;
+.container-left img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.review-text h1 {
     padding-top: 10px;
-    padding-bottom: 10px;
-    position: relative;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 30px;
-    line-height: 25px;
-}
-
-#talkbubble:before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 45%;
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-top: 50px solid #F58FA0;
-    border-right: 15px solid transparent;
-}
-
-.container-left h1 {
-    margin-bottom: 2rem;
-    font-size: 50px;
-    font-family: "Alex Brush", cursive;
-    font-weight: 400;
-    font-style: normal;
-    padding-bottom: 15px;
-    border-bottom-style: groove;
-    border-bottom-width: 5px;
-    border-bottom-color: white;
-}
-  
-.container-left p {
-    margin-bottom: 1rem;
-    font-size: 1em;
-    font-family: "Cardo", serif;
-    font-weight: 400;
-    font-style: normal;
+    font-size: 70px;
+    font-family: "Anatasha";
+    text-decoration: wavy underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+    line-height: 90px;
+    border-bottom: 10px;
 }
 
 .container-right {
-    margin-top: 80px;
     width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .feedback {
+    width: 80%;
+    margin: auto;
     padding: 10px;
+    text-align: center;
+    justify-content: center;
     align-items: center;
     background-color: rgba(249, 236, 236, 0.923);
     gap: 2rem;
     border-radius: 1rem;
     box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .fb-content {
@@ -365,11 +341,12 @@
 }
 
 .fb-content span i {
-    font-size: 25x;
+    font-size: 25px;
     color: #ff226f;
 }
   
 .fb-details p {
+    margin-right: 25px;
     font-style: italic;
     margin-bottom: 1rem;
     color: rgb(16, 44, 87);
@@ -491,11 +468,9 @@ footer {
 }
 
 footer h1 {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 50px;
-    font-family: "Alex Brush", cursive;
-    font-weight: 400;
-    font-style: normal;
+    font-family: "Anatasha";
     letter-spacing: 4px;
 }
 
