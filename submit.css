@@ -1,0 +1,40 @@
+* {
+    background-color: #F8C9C9;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+svg {
+    color: rgb(34 197 94);
+}
+
+h3 {
+    color: rgb(34 197 94);
+}
+
+p {
+    color: rgb(16, 44, 87);
+}
+
+button {
+    margin: 15px;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    color: rgb(16, 44, 87);
+}
+
+button:hover {
+    text-decoration: underline;
+}
