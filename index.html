@@ -189,7 +189,7 @@ Sippin' with Mary Katherine
               </div>
         </div>
         <div class="contact-section" id="contact">
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <form name="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-left">
                 <div class="contact-left-header">
                     <h2>Contact Me</h2>
                     <hr>
@@ -198,7 +198,9 @@ Sippin' with Mary Katherine
                 <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
                 <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
                 <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
-                <button type="submit">Submit<i class="ri-arrow-right-line", color="white"></i></button>
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <button type="submit" id="btnsubmit" onclick="submitForm()">Submit<i class="ri-arrow-right-line", color="white"></i></button>
+                <input type="hidden" name="redirect" value="https://noahruckman18.github.io/Mary_Katherines_Mobile_Mixers/Submit.html">
             </form>
             <form action="" class="contact-right">
             </form>

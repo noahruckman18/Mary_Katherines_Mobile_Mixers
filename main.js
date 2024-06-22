@@ -13,4 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
         currentImageCounter = (currentImageCounter + 1) % slideshowImages.length;
         slideshowImages[currentImageCounter].style.opacity = 1;
     }
-});
+})
+
+function submitForm() {
+    var frm = document.getElementsByName('contact-form')[0];
+    frm.submit(); // Submit the form
+    frm.reset();  // Reset all form data
+    return True; // Prevent page refresh
+ }  
