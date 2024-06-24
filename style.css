@@ -172,16 +172,24 @@
     display: flex;
 }
 
+.hourly-q {
+    width: 50%;
+}
+
 .hourly-price {
-    padding-left: 50px;
+    width: 50%;
 }
 
 .distance {
     display: flex;
 }
 
+.distance-q {
+    width: 50%;
+}
+
 .distance-price {
-    padding-left: 20px;
+    width: 50%;
 }
 
 .security {
@@ -189,7 +197,11 @@
 }
 
 .security-price {
-    padding-left: 40px;
+    width: 50%;
+}
+
+.security-q {
+    width: 50%;
 }
 
 #container {
@@ -393,7 +405,7 @@
     background-color: rgb(16, 44, 87);
     border-radius: 10px;
     margin-bottom: 20px;
-    margin-right: 100px
+    margin-right: 100px;
 }
 
 .contact-input {
@@ -552,7 +564,7 @@ footer a:active {
         align-self: center;
         margin: auto;
         margin-top: 250px;
-        background-color: rgba(0,0,0,0.2);
+        background-color: rgba(0, 0, 0, 0.34);
         color: rgb(254, 238, 241);
     }
     
@@ -562,21 +574,11 @@ footer a:active {
     }
     
     .header-text h1 {
-        font-family: "Alex Brush", cursive;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 60px;
+        font-family: "Callite";
+        font-size: 55px;
         margin: none;
-        line-height: 75px;
+        line-height: 50px;
         letter-spacing: 3px;
-    }
-    
-    .header-text h2 {
-        font-family: "Alex Brush", cursive;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.75rem;
-        padding: 0;
     }
     
     .header-anchors {
@@ -591,7 +593,7 @@ footer a:active {
         text-align: center;
         display: inline;
         font-family: "Cardo", serif;
-        font-weight: 700;
+        font-weight: 400;
         font-style: normal;
     }
     
@@ -602,7 +604,7 @@ footer a:active {
     
     .header-anchors ul li a:hover {
         color: rgb(16, 44, 87);
-        background-color: rgb(254, 238, 241);
+        background-color: rgba(254, 238, 241, 0.752);
         font-size: 30px;
     }
 
@@ -648,9 +650,7 @@ footer a:active {
     }
     
     .aboutme-header h1 {
-        font-family: "Alex Brush", cursive;
-        font-weight: 400;
-        font-style: normal;
+        font-family: "Callite";
         margin-bottom: 30px;
         font-size: 50px;
         margin: 20px;
@@ -701,14 +701,26 @@ footer a:active {
 
 @media screen and (min-width: 1024px) {
     .aboutme {
-        padding: 80px 5px 20px 5px;
+        padding: 15px 5px 20px 5px;
         font-size: 18px;
     }
-    
-    #container {
-        width: 50%;
+
+    .aboutme-text {
+        margin-top: 30px;
     }
     
+    .services-section h1 {
+        font-size: 80px;
+    }
+
+    .rate-container h3 {
+        font-size: 15px;
+    }
+    
+    .provide-list li::before {
+        margin-left: 20%;
+    }
+
     .review-text, .review-header h1 {
         display: flex;
     }
@@ -732,15 +744,21 @@ footer a:active {
     }
     
     .container-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         color: rgb(16, 44, 87);
         letter-spacing: 2.5px;
     }
+
+    .review-text {
+        flex-direction: column;
+    }
     
     #talkbubble {
         margin: auto;
-        width: 100%;
-        height: 100%;
+        width: 85%;
         background-color: #F58FA0;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -751,24 +769,10 @@ footer a:active {
         line-height: 25px;
     }
     
-    #talkbubble:before {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 45%;
-        width: 0;
-        height: 0;
-        border-left: 15px solid transparent;
-        border-top: 50px solid #F58FA0;
-        border-right: 15px solid transparent;
-    }
-    
     .container-left h1 {
         margin-bottom: 2rem;
-        font-size: 50px;
-        font-family: "Alex Brush", cursive;
-        font-weight: 400;
-        font-style: normal;
+        font-size: 55px;
+        font-family: "Callite";
         padding-bottom: 15px;
         border-bottom-style: groove;
         border-bottom-width: 5px;
@@ -784,19 +788,25 @@ footer a:active {
     }
     
     .container-right {
-        margin-top: 80px;
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
         width: 100%;
     }
     
     .feedback {
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
         align-items: center;
+        justify-content: center;
         background-color: rgba(249, 236, 236, 0.923);
-        gap: 2rem;
         border-radius: 1rem;
         box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
         cursor: pointer;
-        margin-top: 50px;
+        margin-left: 30px;
+        height: max-content;
+
     }
     
     .fb-content {
@@ -811,6 +821,7 @@ footer a:active {
     .feedback img {
         max-width: 50px;
         border-radius: 100%;
+        margin: 10px;
     }
     
     .fb-content span i {
@@ -829,5 +840,44 @@ footer a:active {
         color: #ff226f;
         font-size: 1rem;
         font-weight: 500;
+    }
+
+    .contact-left h2{
+        font-size: 40px;
+    }
+
+    .contact-left hr {
+        width: 85px;
+        height: 5px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-right: 125px;
+    }
+
+    .contact-input {
+        width: 250px;
+        height: 50px;
+    }
+
+    .contact-left textarea {
+        height: 200px;
+    }
+
+    .contact-left button {
+        font-size: 22px;
+    }
+
+    .contact-left button:hover {
+        font-size: 25px;
+    }
+
+    footer h1 {
+        font-size: 60px;
+        margin-bottom: 80px;
+    }
+
+    footer i {
+        font-size: 90px;
+        margin: 20px;
     }
 }
