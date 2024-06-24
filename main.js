@@ -15,11 +15,61 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-function submitForm() {
-    var frm = document.getElementsByName('contact-form')[0];
-    frm.submit(); // Submit the form
-    setTimeout(function(){
-        frm.reset(); // Reset all form data
-    },  1000);
-    return True; // Prevent page refresh
- }  
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById('contact-form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Clear previous result messages
+        result.innerHTML = "";
+
+        // Validate form fields
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (name === "" || email === "" || message === "") {
+            result.innerHTML = "Please fill in all fields.";
+            return;
+        }
+
+        // Form data
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        
+        result.innerHTML = "Please wait...";
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let jsonResponse = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = "Form submitted successfully";
+                setTimeout(() => {
+                    window.location.href = "https://noahruckman18.github.io/Mary_Katherines_Mobile_Mixers/Submit.html";
+                }, 1000);
+            } else {
+                result.innerHTML = jsonResponse.message;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+        })
+        .then(() => {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
+    });
+});

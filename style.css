@@ -1,11 +1,8 @@
 @font-face {
-    font-family: Callite;
-    src: url(fonts/Callite.otf);
+    font-family: FancyFont;
+    src: url(fonts/FancyFont.otf);
 }
-@font-face {
-    font-family: Anatasha;
-    src: url(fonts/Anatasha\ Trial.otf);
-}
+
 
 /* Headers*/
 .alex-brush-regular { 
@@ -39,7 +36,6 @@
     font-family: "Cardo", serif;
     font-weight: 400;
     font-style: normal;
-    color: rgb(16, 44, 87);
 }
 
 .header, .image-container, .review-header h1, .review-text {
@@ -101,7 +97,7 @@
 .slideshow-text h2 {
     margin: 0; 
     color: rgb(254, 238, 241);
-    font-family: "Callite";
+    font-family: "FancyFont";
     font-size: 40px;
 }
 
@@ -117,11 +113,12 @@
     letter-spacing: 2.5px;
     line-height: 25px;
     margin: 20px 0 20px 0;
+    color: rgb(16, 44, 87);
 }
 
 .aboutme-header h1 {
     margin-top: 50px;
-    font-family: "Callite";
+    font-family: "FancyFont";
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
@@ -149,11 +146,13 @@
 }
 
 .services-section h1 {
-    font-family: "Callite";
+    color: rgb(16, 44, 87);
+    font-family: "FancyFont";
     font-size: 45px;
 }
 
 .services-section h3 {
+    color: rgb(16, 44, 87);
     font-family: "Cardo", serif;
     font-weight: 700;
     font-style: normal;
@@ -161,6 +160,7 @@
 }
 
 .rate-container {
+    color: rgb(16, 44, 87);
     padding: 30px;
     display: flex;
     justify-content: center;
@@ -257,7 +257,6 @@
 .provide-list ul {
     list-style: none;
     padding: 10px;
-    margin-left: 1em;
     display: flex;
     flex-direction: column;
 }
@@ -309,7 +308,7 @@
 .review-text h1 {
     padding-top: 10px;
     font-size: 70px;
-    font-family: "Callite";
+    font-family: "FancyFont";
     text-decoration: wavy underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 10px;
@@ -483,7 +482,7 @@ footer {
 footer h1 {
     font-size: 40px;
     margin-bottom: 50px;
-    font-family: "Callite";
+    font-family: "FancyFont";
     letter-spacing: 4px;
 }
 
@@ -564,17 +563,16 @@ footer a:active {
         align-self: center;
         margin: auto;
         margin-top: 250px;
-        background-color: rgba(0, 0, 0, 0.34);
-        color: rgb(254, 238, 241);
-    }
-    
-    .header-text:hover {
-        background-color: rgba(254, 238, 241, 0.448);
+        background-color: rgba(0, 0, 0, 0.107);
         color: rgb(255, 255, 255);
     }
     
+    .header-text:hover {
+        background-color: rgba(0, 0, 0, 0.382);
+    }
+    
     .header-text h1 {
-        font-family: "Callite";
+        font-family: "FancyFont";
         font-size: 55px;
         margin: none;
         line-height: 50px;
@@ -598,7 +596,7 @@ footer a:active {
     }
     
     .header-anchors li a{
-        color: rgb(249, 212, 218);
+        color: rgb(255, 255, 255);
         text-decoration: none;
     }
     
@@ -650,7 +648,7 @@ footer a:active {
     }
     
     .aboutme-header h1 {
-        font-family: "Callite";
+        font-family: "FancyFont";
         margin-bottom: 30px;
         font-size: 50px;
         margin: 20px;
@@ -716,9 +714,11 @@ footer a:active {
     .rate-container h3 {
         font-size: 15px;
     }
-    
+    .provide-list {
+        width: 50%;
+    }
     .provide-list li::before {
-        margin-left: 20%;
+        margin-left: 5%;
     }
 
     .review-text, .review-header h1 {
@@ -771,8 +771,8 @@ footer a:active {
     
     .container-left h1 {
         margin-bottom: 2rem;
-        font-size: 55px;
-        font-family: "Callite";
+        font-size: 65px;
+        font-family: "FancyFont";
         padding-bottom: 15px;
         border-bottom-style: groove;
         border-bottom-width: 5px;
@@ -781,7 +781,7 @@ footer a:active {
       
     .container-left p {
         margin-bottom: 1rem;
-        font-size: 1em;
+        font-size: 20px;
         font-family: "Cardo", serif;
         font-weight: 400;
         font-style: normal;
