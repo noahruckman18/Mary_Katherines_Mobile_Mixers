@@ -86,7 +86,8 @@
 .slideshow-text {
     position: absolute; 
     top: 50%; 
-    left: 50%; 
+    left: 50%;
+    width: 270px;
     transform: translate(-50%, -50%); 
     color: rgb(255, 255, 255); 
     text-align: center; 
@@ -512,7 +513,6 @@ footer a:active {
     text-decoration: none;
     color: rgb(16, 44, 87);
 }
-
 
 @media screen and (min-width: 768px)  {
     
