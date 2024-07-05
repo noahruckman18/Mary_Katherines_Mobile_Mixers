@@ -187,7 +187,16 @@
 }
 
 .hourly-rate h1 {
-    color: white;
+    color: rgb(0, 0, 0);
+}
+
+.rate-container hr {
+    border: none;
+    width: 50%;
+    height: 4px;
+    background-image: linear-gradient(270deg, rgb(16, 44, 87), rgba(24, 67, 131, 0.718));
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .hourly-q {
@@ -200,6 +209,7 @@
 
 .distance {
     display: flex;
+
 }
 
 .distance-q {
@@ -211,7 +221,7 @@
 }
 
 .distance-price h1 {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .security {
@@ -223,7 +233,7 @@
 }
 
 .security-price h1 {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .security-q {
@@ -234,13 +244,9 @@
     padding: 10px 10px 10px 10px;
     width: 90%;
     margin: auto;
-    margin-top: 40px;
     height: 150px;
     align-items: center;
-    background-color: #192d5de6;
-    border-radius: 1rem;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
-    color: White;
+    color: rgb(0, 0, 0);
 }
 
 #container h1 {
@@ -255,7 +261,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
-    color: White;
+    color: rgb(0, 0, 0);
 }
 
 
