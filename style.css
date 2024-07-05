@@ -847,7 +847,6 @@ footer a:active {
         padding: 5px;
         align-items: center;
         justify-content: center;
-        background-color: rgba(249, 236, 236, 0.923);
         border-radius: 1rem;
         box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
         cursor: pointer;
@@ -873,18 +872,15 @@ footer a:active {
     
     .fb-content span i {
         font-size: 25x;
-        color: #ff226f;
     }
       
     .fb-details p {
         font-style: italic;
         margin-bottom: 1rem;
-        color: rgb(16, 44, 87);
     }
       
     .fb-details h4 {
         text-align: right;
-        color: #ff226f;
         font-size: 1rem;
         font-weight: 500;
     }
