@@ -56,7 +56,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F8C9C9;
+    background-color: #f8c9c9;
     width: 100%;
     height: 100%;
 }
@@ -114,8 +114,8 @@
 .aboutme {
     display: flex;
     align-items: flex-end;
-    background-color: #ebad99;
-    width: 80%;
+    background-color: #192d5de6;
+    width: 90%;
     border-radius: 20px;
     font-size: 18px;
     justify-content: center;
@@ -123,7 +123,7 @@
     letter-spacing: 2.5px;
     line-height: 25px;
     margin: 20px 0 20px 0;
-    color: #060F1E;
+    color: White;
 }
 
 #aboutme2 {
@@ -139,7 +139,7 @@
 }
 
 .aboutme-text {
-    color: rgb(16, 44, 87);
+    color: White;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -160,13 +160,13 @@
 }
 
 .services-section h1 {
-    color: rgb(16, 44, 87);
+    color: Black;
     font-family: "FancyFont";
     font-size: 45px;
 }
 
 .services-section h3 {
-    color: rgb(16, 44, 87);
+    color: Black;
     font-family: "Cardo", serif;
     font-weight: 700;
     font-style: normal;
@@ -174,7 +174,7 @@
 }
 
 .rate-container {
-    color: rgb(16, 44, 87);
+    color: White;
     padding: 30px;
     display: flex;
     justify-content: center;
@@ -184,6 +184,10 @@
 
 .hourly-rate {
     display: flex;
+}
+
+.hourly-rate h1 {
+    color: white;
 }
 
 .hourly-q {
@@ -206,12 +210,20 @@
     width: 50%;
 }
 
+.distance-price h1 {
+    color: white;
+}
+
 .security {
     display: flex;
 }
 
 .security-price {
     width: 50%;
+}
+
+.security-price h1 {
+    color: white;
 }
 
 .security-q {
@@ -225,17 +237,17 @@
     margin-top: 40px;
     height: 150px;
     align-items: center;
-    background-color: #F9D4C3;
+    background-color: #213562;
     border-radius: 1rem;
     box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
-    color: rgb(16, 44, 87);
+    color: White;
 }
 
 #container h1 {
     font-family: "Alex Brush", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #container p {
@@ -243,6 +255,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
+    color: White;
 }
 
 
@@ -260,10 +273,10 @@
     margin: auto;
     margin-top: 40px;
     align-items: center;
-    background-color: rgba(249, 236, 236, 0.923);
+    background-color: #213562;
     border-radius: 1rem;
     box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
-    color: rgb(16, 44, 87);
+    color: White;
     line-height: 30px;
     list-style: none;
 }
@@ -284,7 +297,7 @@
 
 .provide-list li::before {
     content: "\2714";
-    color: rgb(234, 170, 245);
+    color: #ff226f;
     position: absolute;
     left: 0; /* Position the checkmark to the left */
     top: 0;
@@ -343,7 +356,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: rgba(249, 236, 236, 0.923);
+    background-color: #213562;
     gap: 2rem;
     border-radius: 1rem;
     box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.8);
@@ -375,12 +388,12 @@
     margin-right: 25px;
     font-style: italic;
     margin-bottom: 1rem;
-    color: rgb(16, 44, 87);
+    color: White;
 }
   
 .fb-details h4 {
     text-align: right;
-    color: #ff226f;
+    color: White;
     font-size: 1rem;
     font-weight: 500;
 }
@@ -541,7 +554,7 @@ footer a:active {
         margin: 0;
         padding: 0;
     }
-    
+
     .scroller {
         display: none;
     }
