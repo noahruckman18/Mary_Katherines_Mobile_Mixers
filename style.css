@@ -237,7 +237,7 @@
     margin-top: 40px;
     height: 150px;
     align-items: center;
-    background-color: #2E498A;
+    background-color: #192d5de6;
     border-radius: 1rem;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
     color: White;
@@ -273,7 +273,7 @@
     margin: auto;
     margin-top: 40px;
     align-items: center;
-    background-color: #29417A;
+    background-color: #192d5de6;
     border-radius: 1rem;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
     color: White;
@@ -356,7 +356,9 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: #3D62B8;
+    background-image: radial-gradient(49% 81% at 45% 47%, #4C5F94E6 1%, #073AFF00 100%),radial-gradient(113% 91% at 17% -2%, #192d5de6 1%, #FF000000 99%),
+    radial-gradient(142% 91% at 83% 7%, #192D5DED 0%, #FF000000 99%),
+    radial-gradient(142% 91% at -6% 74%, #192d5de6 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #FF0049FF 0%, #FF0000FF 99%);
     gap: 2rem;
     border-radius: 1rem;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
