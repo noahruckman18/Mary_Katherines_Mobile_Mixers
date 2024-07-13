@@ -38,17 +38,8 @@
     font-style: normal;
 }
 
-.header, .image-container, .review-header h1, .review-text {
+.header, .image-container, .review-text {
     display: none;
-}
-
-.scroller {
-    background-image: url(images/Katie4.jpeg);
-    min-height: 400px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .aboutme-section {
@@ -153,7 +144,7 @@
 
 .services-section {
     text-align: center;
-    padding: 25px 0 75px 0;
+    padding: 25px 0 25px 0;
     width: 100%;
     margin: auto;
     background-color: #F8C9C9;
@@ -279,26 +270,16 @@
     margin: auto;
     margin-top: 40px;
     align-items: center;
-    background-color: #192d5de6;
-    border-radius: 1rem;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
-    color: White;
+    background-color: #F8C9C9;
+    color: rgb(0, 0, 0);
     line-height: 30px;
     list-style: none;
 }
 
-.provide-list ul {
-    list-style: none;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.provide-list li {
-    position: relative; 
-    margin-bottom: 10px; 
-    font-size: 1em;
-    padding-left: 70px; 
+.provide-list span {
+    color: #ff226f;
+    font-size: 20px;
+    margin-right: 15px;
 }
 
 .provide-list li::before {
@@ -310,6 +291,15 @@
     margin-left: 10%;
 }
 
+.provide-list hr {
+    border: none;
+    width: 30%;
+    height: 6px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-image: linear-gradient(270deg, rgb(16, 44, 87), rgba(24, 67, 131, 0.718));
+    border-radius: 10px;
+}
 
 .review-section {
     padding-top: 30px;
@@ -318,12 +308,18 @@
     display: flex;
 }
 
+.review-header h1 {
+    color: Black;
+    font-family: "FancyFont";
+    font-size: 40px;
+}
+
 .review-container {
     display: flex;
     flex-direction: column;
     margin: auto;
     padding: 1rem;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .container-left {
@@ -336,6 +332,7 @@
 .container-left img{
     max-width: 100%;
     max-height: 100%;
+    background-color: #F8C9C9;
 }
 
 .review-text h1 {
@@ -362,9 +359,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(49% 81% at 45% 47%, #4C5F94E6 1%, #073AFF00 100%),radial-gradient(113% 91% at 17% -2%, #192d5de6 1%, #FF000000 99%),
-    radial-gradient(142% 91% at 83% 7%, #192D5DED 0%, #FF000000 99%),
-    radial-gradient(142% 91% at -6% 74%, #192d5de6 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #FF0049FF 0%, #FF0000FF 99%);
+    background-color: #192d5de6;
     gap: 2rem;
     border-radius: 1rem;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
@@ -721,9 +716,9 @@ footer a:active {
     
     .container-left {
         width: 50%;
-        color: rgb(16, 44, 87);
+        color: black;
         letter-spacing: 2px;
-        background-color: white;
+        background-color: #F8C9C9;
     }
 
     #talkbubble {
@@ -804,7 +799,7 @@ footer a:active {
         width: 100%;
         color: rgb(16, 44, 87);
         letter-spacing: 2.5px;
-        background-color: white;
+        margin-bottom: 50px;
     }
 
     .review-text {
@@ -814,7 +809,7 @@ footer a:active {
     #talkbubble {
         margin: auto;
         width: 85%;
-        background-color: #F58FA0;
+        background-color: #F8C9C9;
         padding-top: 10px;
         padding-bottom: 10px;
         position: relative;
@@ -829,9 +824,6 @@ footer a:active {
         font-size: 65px;
         font-family: "FancyFont";
         padding-bottom: 15px;
-        border-bottom-style: groove;
-        border-bottom-width: 5px;
-        border-bottom-color: white;
     }
       
     .container-left p {
@@ -839,8 +831,14 @@ footer a:active {
         font-size: 20px;
         font-family: "Cardo", serif;
         font-weight: 400;
-        font-style: normal;
+        font-style: italic;
+        letter-spacing: 2px;
+        background-color: #192d5de6;
+        border-radius: 20px;
+        color: white;
+        padding: 20px;
     }
+
     
     .container-right {
         display: flex;
