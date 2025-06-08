@@ -3,181 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.K. Mobile Mixers</title>
+    <title>Mary Katherine's Mobile Mixers - Signature Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="images/FavIcon.png">
-    <style>
-    /* Custom Styles & Animations */
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #FFF8F8;
-    }
-
-    .font-fancy {
-        font-family: 'Dancing Script', cursive;
-    }
-
-    .font-body-text {
-        font-family: 'Cardo', serif;
-    }
-
-    /* Loader Styles */
-    #loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #F8C9C9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        flex-direction: column;
-        opacity: 1;
-        transition: opacity 0.5s ease-out;
-    }
-
-    .martini-glass {
-        width: 100px; /* Max width of the glass top */
-        height: 120px; /* Total height for the animation container */
-        position: relative;
-    }
-
-    .martini-glass .bowl {
-        width: 100px;  /* Defines the top width of the V-shape */
-        height: 70px; /* Height of the V-shape */
-        background-color: #102C57; /* This acts as the border color */
-        clip-path: polygon(0% 0%, 100% 0%, 50% 100%); /* V-shape: top-left, top-right, bottom-center */
-        position: absolute;
-        top: 0; /* Bowl starts at the top of .martini-glass */
-        left: 0;
-        border: none;
-        border-radius: 0;
-    }
-
-    .martini-glass .liquid {
-        /* Positioned and sized to appear inside the .bowl */
-        top: 8px;
-        left: 11.5px; /* (100px bowl_width - 77px liquid_width) / 2 */
-        width: 77px;
-        height: 45%; /* (54px physical height / 120px parent_height) * 100. */
-        background-color: #FF69B4;
-        position: absolute;
-        clip-path: polygon(50% 100%, 0% 0%, 100% 0%); /* V-shape, point at its own bottom */
-        border-radius: 0;
-
-        /* Animation using uniform scale for bottom-up fill, maintaining aspect ratio */
-        transform-origin: 50% 100%; /* Scale from the bottom-center */
-        transform: scale(0);      /* Initial state: scaled down to zero size */
-        animation: fill-from-bottom 2.5s ease-out forwards;
-    }
-
-    @keyframes fill-from-bottom {
-        0% {
-            transform: scale(0);
-            opacity: 0.7;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    .martini-glass .stem {
-        width: 8px;
-        height: 30px;
-        background-color: #102C57;
-        position: absolute;
-        top: 70px; /* Directly below the 70px tall bowl */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .martini-glass .base {
-        width: 50px;
-        height: 8px;
-        background-color: #102C57;
-        border-radius: 4px;
-        position: absolute;
-        top: 100px; /* Below the stem (70px bowl + 30px stem) */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    #loader p {
-        margin-top: 20px;
-        font-family: 'Dancing Script', cursive;
-        font-size: 1.8rem;
-        color: #102C57;
-    }
-
-    /* ... (Rest of your existing CSS: .slideshow-container, color utilities, .btn-primary, etc. remains unchanged) ... */
-    .slideshow-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    .slideshow-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
-    .slideshow-img.active {
-        opacity: 1;
-    }
-
-    .bg-primary-pink { background-color: #F8C9C9; }
-    .text-primary-pink { color: #F8C9C9; }
-    .border-primary-pink { border-color: #F8C9C9; }
-
-    .bg-dark-blue { background-color: #102C57; }
-    .text-dark-blue { color: #102C57; }
-    .border-dark-blue { border-color: #102C57; }
-
-    .bg-accent-pink { background-color: #FFD1D1; }
-    .text-accent-pink { color: #FFD1D1; }
-
-    .btn-primary {
-        background-color: #102C57;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        transition: background-color 0.3s ease;
-    }
-    .btn-primary:hover {
-        background-color: #1a3b70;
-    }
-
-    .section-title {
-        font-family: 'Dancing Script', cursive;
-        color: #102C57;
-    }
-
-    hr {
-        border-top-color: #E5E7EB;
-    }
-    .header-sticky-transparent {
-        background-color: rgba(248, 201, 201, 0.85);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-    }
-</style>
+    <!-- Favicon - You can replace this with your actual logo if you have a small square version -->
+    <link rel="icon" type="image/x-icon" href="https://placehold.co/32x32/102C57/F8C9C9?text=MK">
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-gray-800">
+<body class="font-poppins text-gray-700">
 
     <div id="loader">
         <div class="martini-glass">
@@ -190,334 +27,341 @@
     </div>
 
     <div id="main-content" class="opacity-0 transition-opacity duration-500 ease-in-out">
-        <header class="header-sticky-transparent shadow-md sticky top-0 z-50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20">
-                    <div class="flex-shrink-0">
-                        <a href="#" class="text-3xl font-fancy text-dark-blue">M.K. Mobile Mixers</a>
-                    </div>
-                    <nav class="hidden md:flex space-x-6">
-                        <a href="#about" class="text-dark-blue hover:text-pink-700 font-semibold">About</a>
-                        <a href="#services" class="text-dark-blue hover:text-pink-700 font-semibold">Services</a>
-                        <a href="#reviews" class="text-dark-blue hover:text-pink-700 font-semibold">Reviews</a>
-                        <a href="#contact" class="text-dark-blue hover:text-pink-700 font-semibold">Contact</a>
-                    </nav>
-                    <div class="md:hidden">
-                        <button id="mobile-menu-button" class="text-dark-blue focus:outline-none">
-                            <i class="ri-menu-3-line text-2xl"></i>
-                        </button>
-                    </div>
+        <header id="header" class="sticky top-0 z-50 transition-all duration-300">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#home" class="text-3xl font-dancing-script text-mk-dark-blue">Mary Katherine's Mobile Mixers</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#service-details" class="nav-link">Service Details</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-mk-dark-blue focus:outline-none">
+                        <i class="ri-menu-3-line text-3xl"></i>
+                    </button>
                 </div>
             </div>
-            <div id="mobile-menu" class="md:hidden hidden bg-primary-pink/90 pb-4">
-                <a href="#about" class="block py-2 px-4 text-sm text-dark-blue hover:bg-accent-pink">About</a>
-                <a href="#services" class="block py-2 px-4 text-sm text-dark-blue hover:bg-accent-pink">Services</a>
-                <a href="#reviews" class="block py-2 px-4 text-sm text-dark-blue hover:bg-accent-pink">Reviews</a>
-                <a href="#contact" class="block py-2 px-4 text-sm text-dark-blue hover:bg-accent-pink">Contact</a>
+            <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg pb-3">
+                <a href="#home" class="mobile-nav-link block py-2 px-6">Home</a>
+                <a href="#about" class="mobile-nav-link block py-2 px-6">About</a>
+                <a href="#service-details" class="mobile-nav-link block py-2 px-6">Service Details</a>
+                <a href="#faq" class="mobile-nav-link block py-2 px-6">FAQ</a>
+                <a href="#contact" class="mobile-nav-link block py-2 px-6">Contact</a>
             </div>
         </header>
 
-        <section class="relative h-[70vh] min-h-[400px] overflow-hidden">
-            <div class="slideshow-container">
-                <img src="images/Katie5.jpeg" alt="Mary Katherine Mobile Mixers" class="slideshow-img active">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center relative z-10 pt-20">
-                <h1 class="text-5xl md:text-7xl font-fancy text-white mb-4 leading-tight">Mary Katherine's<br>Mobile Mixers</h1>
-                <p class="text-xl md:text-2xl text-gray-200 mb-8 font-body-text italic">Crafting memorable moments, one drink at a time.</p>
-                <a href="#contact" class="btn-primary text-lg">Book Your Event</a>
+        <section id="home" class="hero-section h-[80vh] md:h-[90vh] bg-cover bg-center relative flex items-center justify-center text-white text-center" 
+                 style="background-image: url('images/Katie5.jpeg');">
+                 <!-- The background image is now linked to 'images/Katie5.png' -->
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="relative z-10 p-6">
+                <h1 class="text-5xl md:text-7xl font-dancing-script mb-6 leading-tight">Cold Drinks. Warm Vibes. Good Times.</h1>
+                <p class="text-xl md:text-2xl mb-10 font-light max-w-3xl mx-auto">Bringing the bar to your special event, one memorable sip at a time with Mary Katherine.</p>
+                <a href="#contact" class="hero-button">Book Your Event</a>
             </div>
         </section>
 
-        <section id="about" class="py-16 lg:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-16 md:py-24 bg-intro-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl section-title mb-8">Your Event, My Signature Service</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-700">
+                    With my charming mobile bar, I'm excited to bring a unique and refreshing experience to your next celebration!
+                    Whether you're throwing a backyard bash, celebrating a milestone, or just feel like having a good ol' time,
+                    I've got your back – and your glass. Let me handle the bar so you can enjoy your event!
+                </p>
+            </div>
+        </section>
+
+        <section id="services-intro" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl section-title text-center mb-16">My Signature Dry Hire Service</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto text-gray-700 mb-10">
+                    You provide the alcohol of your choice, and I masterfully handle the rest! I'll assist with a detailed shopping list of what and how much to buy, ensuring a cost-efficient and perfectly stocked bar for your event.
+                </p>
+                <div class="text-center">
+                     <a href="#service-details" class="cta-button text-lg">View Service Inclusions <i class="ri-arrow-down-s-line align-middle ml-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-mk-dark-blue text-white">
+            <div class="container mx-auto px-6 text-center">
+                <i class="ri-double-quotes-l text-5xl text-mk-primary-pink mb-6"></i>
+                <p class="text-2xl md:text-3xl font-light max-w-4xl mx-auto leading-relaxed mb-8">
+                    "My attention to detail, along with great customer service, will make your event one to remember.
+                    With a splash of creativity and a twist of fun, I'll take your event from ordinary to extraordinary."
+                </p>
+                <img src="logo/MKMM_Logo.png" 
+                     alt="Mary Katherine's Mobile Mixers Logo" 
+                     class="mx-auto h-56 w-56 md:h-64 md:w-64 object-contain border-4 border-mk-pink rounded-full shadow-lg bg-white p-3">
+                     <!-- 
+                        - Increased logo size to h/w-56 (14rem) and md:h/w-64 (16rem).
+                        - Increased border and padding slightly for better proportion.
+                     -->
+            </div>
+        </section>
+
+        <section id="service-details" class="py-16 md:py-24 bg-mk-body-bg-alt">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl section-title text-center mb-12">What's Included In Your Dry Hire</h2>
+                <div class="max-w-3xl mx-auto service-card-main">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">My All-Inclusive Mobile Bartending Experience</h3>
+                    <p class="text-gray-600 mb-8 text-center text-lg">
+                        With my Dry Hire service, you supply the alcohol, and I bring the complete bar experience to you. Here’s what you can expect:
+                    </p>
+                    <ul class="space-y-3 text-gray-700 mb-10">
+                        <li><strong>Professional Bartending by Mary Katherine:</strong> Friendly and experienced service for you and your guests.</li>
+                        <li><strong>Custom Drink Menu Consultation:</strong> We'll collaborate on a curated list of up to <strong>3 Signature Cocktails</strong> tailored to your event, plus guidance for beer & wine selections.</li>
+                        <li><strong>Detailed Shopping List Assistance:</strong> I'll help you figure out exactly what and how much alcohol to purchase, making it cost-effective.</li>
+                        <li><strong>Essential Bar Tools & Equipment:</strong> Shakers, jiggers, pour spouts, cutting boards, knives, etc.</li>
+                        <li><strong>Basic Mixers & Garnishes:</strong> Standard juices (orange, cranberry, pineapple), sodas (Coke, Diet Coke, Sprite, club soda, tonic), and fresh garnishes (lemons, limes, oranges, cherries).</li>
+                        <li><strong>Premium Options Available:</strong> Ask about specialty syrups, fresh herbs, or unique garnishes for an elevated experience (additional cost may apply).</li>
+                        <li><strong>Coolers & Ice:</strong> I'll bring the coolers and ensure plenty of ice to keep drinks perfectly chilled throughout your event.</li>
+                        <li><strong>Disposable Drinkware, Napkins & Straws:</strong> Quality disposable options are included. Upgraded options available upon request.</li>
+                        <li><strong>Complete Setup & Teardown:</strong> I handle all the bar-related setup before your event and cleanup afterward.</li>
+                        <li><strong>Travel:</strong> Includes travel up to 30 miles from my home base (an additional fee applies for further distances).</li>
+                        <li><strong>Service Duration:</strong> Up to 4 hours of active bartending service (additional hours can be arranged).</li>
+                        <li><strong>Insurance:</strong> General & Liquor Liability Insurance for peace of mind.</li>
+                    </ul>
+                    <p class="text-center mt-8 text-md text-gray-700">
+                        If you opt not to have a tip jar, a 20% service charge will be added to your total bill.
+                    </p>
+                    <div class="text-center mt-10">
+                        <a href="#contact" class="cta-button text-xl">Let's Plan Your Bar!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
                 <h2 class="text-4xl md:text-5xl section-title text-center mb-12">Meet Mary Katherine</h2>
-                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                    <div class="lg:w-1/2 w-full">
-                        <img src="images/Katie6.jpeg" alt="Mary Katherine" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[500px]">
+                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                    <div class="md:w-1/3 text-center">
+                        <img src="images/Katie7.jpeg" 
+                             alt="Mary Katherine, Your Bartender" 
+                             class="rounded-lg shadow-2xl w-full max-w-xs md:max-w-sm h-auto object-cover mx-auto border-4 border-white">
+                             <!-- The image path is now 'images/Katie7.png' -->
                     </div>
-                    <div class="lg:w-1/2 font-body-text text-lg text-gray-700 space-y-6">
-                        <p class="italic leading-relaxed">
-                            Hi! I'm Mary Katherine, a bartender with 7 years of experience.
-                            I started in a corporate bartending job and fell in love with creating unique drinks and providing a fun atmosphere.
-                            I enjoy meeting new people and building relationships with customers.
+                    <div class="md:w-2/3">
+                        <p class="text-xl italic leading-relaxed mb-6 text-gray-700">
+                            Hi! I'm Mary Katherine, your friendly neighborhood mixologist with over 7 years of experience crafting delightful drinks and creating vibrant atmospheres.
+                            I started this journey with a passion for connecting with people and a love for the art of cocktail making.
                         </p>
-                        <p class="leading-relaxed">
-                            I pride myself on practicing Responsible Alcohol Service (RAS).
-                            Over the years, I've improved my skills and am confident in crafting a specialized drink list for your special occasion.
-                            I look forward to meeting you and serving at your event! :)
+                        <p class="text-lg leading-relaxed mb-6 text-gray-600">
+                            My goal is to make your event's beverage service seamless, enjoyable, and absolutely memorable. I pride myself on practicing Responsible Alcohol Service (RAS) and ensuring every guest feels welcome and well-cared for.
+                            From custom drink lists to matching your event's theme, I'm here to pour a little extra joy into your special occasion!
                         </p>
-                        <div class="mt-6 p-6 bg-accent-pink rounded-lg shadow">
-                            <h3 class="text-2xl font-fancy text-dark-blue mb-3">My Philosophy</h3>
-                            <p class="text-dark-blue italic">"To provide not just drinks, but an experience – ensuring every guest feels special and every event is memorable."</p>
+                        <div class="flex justify-start space-x-5 text-mk-dark-blue">
+                            <a href="mailto:mk@example.com" class="hover:text-mk-button-hover-blue transition-colors"><i class="ri-mail-fill text-3xl"></i></a>
+                            <a href="tel:+15551234567" class="hover:text-mk-button-hover-blue transition-colors"><i class="ri-phone-fill text-3xl"></i></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-mk-button-hover-blue transition-colors"><i class="ri-instagram-fill text-3xl"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="py-16 lg:py-24 bg-primary-pink">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl md:text-5xl section-title text-center mb-12">Rates & Services</h2>
-                <p class="text-center text-dark-blue font-semibold text-lg mb-10">* Flat fee of $200 for an event under 3 hours. *</p>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-white p-8 rounded-lg shadow-xl text-center border-t-4 border-dark-blue">
-                        <h3 class="text-2xl font-fancy text-dark-blue mb-3">Hourly Rate</h3>
-                        <p class="text-4xl font-bold text-dark-blue mb-4">$50 <span class="text-xl font-normal">/ hour</span></p>
-                        <ul class="text-gray-600 font-body-text space-y-2">
-                            <li>Minimum 3 hours</li>
-                            <li>Within 30-mile radius of Williamsport</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-xl text-center border-t-4 border-dark-blue">
-                        <h3 class="text-2xl font-fancy text-dark-blue mb-3">Travel Fee</h3>
-                        <p class="text-4xl font-bold text-dark-blue mb-4">$2 <span class="text-xl font-normal">/ mile / hour</span></p>
-                        <ul class="text-gray-600 font-body-text space-y-2">
-                            <li>For events outside 30-mile radius</li>
-                            <li>Calculated one-way</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-xl text-center border-t-4 border-dark-blue md:col-span-2 lg:col-span-1">
-                        <h3 class="text-2xl font-fancy text-dark-blue mb-3">Security</h3>
-                        <p class="text-4xl font-bold text-dark-blue mb-4">$20 <span class="text-xl font-normal">/ hour</span></p>
-                        <ul class="text-gray-600 font-body-text space-y-2">
-                            <li>If security is not already provided</li>
-                            <li>Ensures safety for all guests</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-dark-blue text-white p-8 md:p-12 rounded-lg shadow-xl">
-                    <h3 class="text-3xl font-fancy text-center text-primary-pink mb-8">What I Provide</h3>
-                    <div class="grid sm:grid-cols-2 gap-6 font-body-text text-lg">
-                        <p class="flex items-center"><i class="ri-check-double-line text-pink-400 mr-3 text-2xl"></i>Outstanding Service!</p>
-                        <p class="flex items-center"><i class="ri-check-double-line text-pink-400 mr-3 text-2xl"></i>Professional setup & tear down.</p>
-                        <p class="flex items-center"><i class="ri-check-double-line text-pink-400 mr-3 text-2xl"></i>Matching your event's dress code & aesthetic.</p>
-                        <p class="flex items-center"><i class="ri-check-double-line text-pink-400 mr-3 text-2xl"></i>Curated drink list, if desired.</p>
-                        <p class="flex items-center"><i class="ri-check-double-line text-pink-400 mr-3 text-2xl"></i>Essential bartending tools (shakers, garnish tray, openers).</p>
-                        <p class="flex items-center"><i class="ri-check-double-line text-pink-400 mr-3 text-2xl"></i>Responsible Alcohol Service (RAS) certified.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="reviews" class="py-16 lg:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl md:text-5xl section-title text-center mb-12">Crafted Testimonials</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-primary-pink p-8 rounded-lg shadow-lg">
-                        <div class="flex items-center mb-4">
-                            <img src="images/Avatar.jpeg" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
-                            <div>
-                                <h4 class="font-semibold text-dark-blue text-lg">Anonymous Client 1</h4>
-                                <p class="text-sm text-gray-700">Private Party</p>
-                            </div>
+        <section id="faq" class="py-16 md:py-24 bg-mk-body-bg-alt">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl section-title text-center mb-16">Frequently Asked Questions</h2>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold text-mk-dark-blue flex-1 min-w-0 mr-4">How much does your service cost?</h3>
+                            <i class="ri-arrow-down-s-line text-mk-dark-blue text-2xl"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Each event is unique! I customize offerings based on your specific needs. The price depends on guest count, types of drinks desired, service hours, location, and any additional amenities or special requests. Please fill out the contact form for a personalized quote!</p>
                         </div>
-                        <p class="font-body-text italic text-gray-800">"Absolutely stellar service! Mary Katherine's Mobile Mixers made our party unforgettable with her delicious cocktails and professional demeanor. Guests were raving about the drinks all night. Highly recommend!"</p>
                     </div>
-                    <div class="bg-primary-pink p-8 rounded-lg shadow-lg">
-                        <div class="flex items-center mb-4">
-                            <img src="images/Avatar.jpeg" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
-                            <div>
-                                <h4 class="font-semibold text-dark-blue text-lg">Anonymous Client 2</h4>
-                                <p class="text-sm text-gray-700">Wedding Reception</p>
-                            </div>
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold text-mk-dark-blue flex-1 min-w-0 mr-4">Do you supply the alcohol for the Dry Hire service?</h3>
+                            <i class="ri-arrow-down-s-line text-mk-dark-blue text-2xl"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>For my "Dry Hire" service, to comply with local and state laws, the host (you!) or a third party (like your caterer or venue) must provide all alcohol. I will guide you with a detailed shopping list to make it easy and cost-effective!</p>
                         </div>
-                        <p class="font-body-text italic text-gray-800">"Mary Katherine's Mobile Mixers was a hit at our event! She was prompt, courteous, and crafted drinks that were both tasty and creative. It was like having a top-notch cocktail bar right in our backyard. Will definitely book again!"</p>
                     </div>
-                    <div class="bg-primary-pink p-8 rounded-lg shadow-lg">
-                        <div class="flex items-center mb-4">
-                            <img src="images/Avatar.jpeg" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
-                            <div>
-                                <h4 class="font-semibold text-dark-blue text-lg">Anonymous Client 3</h4>
-                                <p class="text-sm text-gray-700">Corporate Event</p>
-                            </div>
+                     <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                           <h3 class="text-xl font-semibold text-mk-dark-blue flex-1 min-w-0 mr-4">What can you serve if I provide the alcohol?</h3>
+                           <i class="ri-arrow-down-s-line text-mk-dark-blue text-2xl"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Since you provide the alcohol, I can serve whatever you choose! We'll collaborate on signature cocktails, and I can expertly serve your selected beer and wine. My goal is to customize your bar menu to your taste, budget, and event type, always adhering to local laws for responsible service.</p>
                         </div>
-                        <p class="font-body-text italic text-gray-800">"If you want your event to stand out, look no further. Her attention to detail and quality of service was exceptional. She helped create a lively atmosphere. Thank you for making our celebration extra special!"</p>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold text-mk-dark-blue flex-1 min-w-0 mr-4">Do you offer non-alcoholic beverage options?</h3>
+                            <i class="ri-arrow-down-s-line text-mk-dark-blue text-2xl"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! I'm happy to provide my mobile bar for any type of event and can create a delightful non-alcoholic beverage menu, including custom mocktails, sodas, juices, and flavored waters. I can also set up a dedicated non-alcoholic beverage station.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold text-mk-dark-blue flex-1 min-w-0 mr-4">What types of events do you serve?</h3>
+                            <i class="ri-arrow-down-s-line text-mk-dark-blue text-2xl"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I cater to weddings, birthdays, showers, corporate events, fundraisers, private parties on private property, or at venues that allow outside bar services. For public events or fundraisers, let's chat about specifics as permits might be necessary.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold text-mk-dark-blue flex-1 min-w-0 mr-4">What's your service area?</h3>
+                            <i class="ri-arrow-down-s-line text-mk-dark-blue text-2xl"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I currently serve the local region within a 30-mile radius from my home base. I'm happy to travel further for an additional fee, calculated per mile. Just ask when you inquire!</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-16 lg:py-24 bg-primary-pink">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl md:text-5xl section-title text-center mb-12">Get a Quote for Your Event</h2>
-                <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-2xl">
+        <section id="contact" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl section-title text-center mb-8">Let's Get This Party Started!</h2>
+                <p class="text-center text-lg mb-12 max-w-2xl mx-auto text-gray-700">
+                    Ready to make your event unforgettable? Fill out the form below and let's craft the perfect bar experience for you!
+                </p>
+                <div class="form-container max-w-3xl mx-auto">
                     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="959257cb-f2f5-4e0c-a364-b4f36fafd7eb">
-                        <input type="hidden" name="redirect" value="https://noahruckman18.github.io/Mary_Katherines_Mobile_Mixers/Submit.html">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="hidden" name="access_key" value="959257cb-f2f5-4e0c-a364-b4f36fafd7eb"> <input type="hidden" name="redirect" value="https://marykatherinesmobilemixers.com/thank-you.html"> <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="hidden" name="subject" value="New Event Inquiry from Mary Katherine's Mobile Mixers Website">
+
+
+                        <div class="grid md:grid-cols-2 gap-x-6">
+                            <div class="mb-6">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Your Full Name" class="form-input" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-x-6">
+                            <div class="mb-6">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" class="form-input">
+                            </div>
+                            <div class="mb-6">
+                                <label for="event_type" class="form-label">Type of Event *</label>
+                                <select id="event_type" name="event_type" class="form-select" required>
+                                    <option value="" disabled selected>Select an event type...</option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Birthday Party">Birthday Party</option>
+                                    <option value="Corporate Event">Corporate Event</option>
+                                    <option value="Anniversary">Anniversary</option>
+                                    <option value="Private Party">Private Party</option>
+                                    <option value="Fundraiser">Fundraiser</option>
+                                    <option value="Other">Other (Please specify below)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="event_type_other" class="form-label">If "Other" Event Type, please specify:</label>
+                            <input type="text" id="event_type_other" name="event_type_other" placeholder="e.g., Graduation, Holiday Party" class="form-input">
+                        </div>
+
+
+                        <div class="grid md:grid-cols-2 gap-x-6">
+                            <div class="mb-6">
+                                <label for="event_date" class="form-label">Preferred Event Date *</label>
+                                <input type="date" id="event_date" name="event_date" class="form-input" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="guest_count" class="form-label">Estimated Guest Count *</label>
+                                <input type="number" id="guest_count" name="guest_count" placeholder="e.g., 75" class="form-input" min="1" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="event_location" class="form-label">Event Location / Venue Name *</label>
+                            <textarea id="event_location" name="event_location" rows="3" placeholder="Street Address, City, Venue Name if applicable" class="form-textarea" required></textarea>
+                        </div>
 
                         <div class="mb-6">
-                            <label for="name" class="block text-dark-blue font-semibold mb-2">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none font-body-text" required>
+                            <label class="form-label">Services Interested In: *</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 form-checkbox-group">
+                                <div><input type="checkbox" id="service_signature_cocktails" name="services_interested[]" value="Signature Cocktail Curation" class="mr-2" checked><label for="service_signature_cocktails">Signature Cocktail Curation</label></div>
+                                <div><input type="checkbox" id="service_beer_wine" name="services_interested[]" value="Beer & Wine Service" class="mr-2" checked><label for="service_beer_wine">Beer & Wine Service</label></div>
+                                <div><input type="checkbox" id="service_non_alcoholic" name="services_interested[]" value="Non-Alcoholic Options" class="mr-2"><label for="service_non_alcoholic">Non-Alcoholic Options</label></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">My Dry Hire service includes professional bartending, bar tools, setup/cleanup, and guidance on alcohol purchasing.</p>
                         </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-x-6">
+                            <div class="mb-6 form-radio-group">
+                                <label class="form-label">Will you provide alcohol (Dry Hire)? *</label>
+                                <div class="flex items-center space-x-4">
+                                    <div><input type="radio" id="dry_hire_yes" name="dry_hire" value="Yes, I will provide alcohol" required class="mr-1" checked><label for="dry_hire_yes">Yes</label></div>
+                                    <div><input type="radio" id="dry_hire_no" name="dry_hire" value="No (Interested in other options)" class="mr-1"><label for="dry_hire_no">No (Let's discuss)</label></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Standard service is Dry Hire (you provide alcohol).</p>
+                            </div>
+                            <div class="mb-6 form-radio-group">
+                                <label class="form-label">Coolers & Ice Needed? *</label>
+                               <div class="flex items-center space-x-4">
+                                    <div><input type="radio" id="coolers_yes" name="coolers_ice" value="Yes, please provide" required class="mr-1" checked><label for="coolers_yes">Yes, included</label></div>
+                                    <div><input type="radio" id="coolers_no" name="coolers_ice" value="No, I'll handle it" class="mr-1"><label for="coolers_no">No, I'll handle</label></div>
+                                </div>
+                                 <p class="text-xs text-gray-500 mt-1">Coolers and ice are typically included in my service.</p>
+                            </div>
+                        </div>
+
                         <div class="mb-6">
-                            <label for="email" class="block text-dark-blue font-semibold mb-2">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none font-body-text" required>
+                            <label for="how_heard" class="form-label">How did you hear about us?</label>
+                            <select id="how_heard" name="how_heard" class="form-select">
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Referral">Referral</option>
+                                <option value="Social Media (Instagram/Facebook)">Social Media (Instagram/Facebook)</option>
+                                <option value="Web Search (Google, etc.)">Web Search (Google, etc.)</option>
+                                <option value="Attended Previous Event">Attended Previous Event</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
-                        <div class="mb-6">
-                            <label for="event_type" class="block text-dark-blue font-semibold mb-2">Type of Event</label>
-                            <input type="text" id="event_type" name="event_type" placeholder="e.g., Wedding, Birthday Party, Corporate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none font-body-text">
+
+                        <div class="mb-8">
+                            <label for="message" class="form-label">Additional Details / Specific Requests</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me more about your vision for the event, specific drink requests, theme, etc." class="form-textarea"></textarea>
                         </div>
-                        <div class="mb-6">
-                            <label for="event_date" class="block text-dark-blue font-semibold mb-2">Preferred Date</label>
-                            <input type="date" id="event_date" name="event_date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none font-body-text">
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-dark-blue font-semibold mb-2">Your Message / Event Details</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your event, number of guests, specific requests, etc." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none font-body-text" required></textarea>
-                        </div>
-                        <div id="form-result" class="mb-4 text-sm font-body-text"></div>
-                        <button type="submit" id="btnsubmit" class="w-full btn-primary flex items-center justify-center text-lg">
-                            Send Inquiry <i class="ri-arrow-right-line ml-2"></i>
+
+                        <div id="form-result" class="mb-4 text-sm"></div>
+                        <button type="submit" id="submit-button" class="flex items-center justify-center">
+                            Send Inquiry <i class="ri-send-plane-fill ml-2"></i>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <footer class="bg-dark-blue text-primary-pink py-12">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h3 class="text-3xl font-fancy mb-6">Stay Connected</h3>
-                <div class="flex justify-center space-x-6 mb-8">
-                    <a href="https://www.instagram.com/mkmixers/" target="_blank" rel="noopener noreferrer" class="text-primary-pink hover:text-white text-4xl transition-colors">
-                        <i class="ri-instagram-line"></i>
-                    </a>
-                    <a href="facebook.com/test" target="_blank" rel="noopener noreferrer" class="text-primary-pink hover:text-white text-4xl transition-colors">
-                        <i class="ri-facebook-circle-fill"></i>
-                    </a>
+        <footer class="bg-mk-dark-blue text-mk-text-on-dark py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-4xl font-dancing-script mb-8">Mary Katherine's Mobile Mixers</h3>
+                <div class="flex justify-center space-x-8 mb-10">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon text-mk-text-on-dark text-3xl"><i class="ri-instagram-line"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon text-mk-text-on-dark text-3xl"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="mailto:mk@example.com" class="social-icon text-mk-text-on-dark text-3xl"><i class="ri-mail-line"></i></a>
                 </div>
-                <p class="font-body-text text-sm">&copy; <span id="currentYear"></span> Mary Katherine's Mobile Mixers. All Rights Reserved.</p>
+                <p class="text-sm">&copy; <span id="currentYear"></span> Mary Katherine's Mobile Mixers. All Rights Reserved.</p>
+                <p class="text-xs mt-3 opacity-80">Serving our local community and surrounding areas with perfectly poured memories.</p>
             </div>
         </footer>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Loader
-            const loader = document.getElementById('loader');
-            const mainContent = document.getElementById('main-content');
-
-            setTimeout(() => {
-                if(loader) {
-                    loader.style.opacity = '0';
-                }
-                if(mainContent) {
-                    mainContent.style.opacity = '1';
-                }
-                 setTimeout(() => {
-                    if(loader) loader.style.display = 'none';
-                 }, 500);
-            }, 3500);
-
-            // Mobile Menu
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Smooth scroll for nav links
-            document.querySelectorAll('header a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerOffset = document.querySelector('header').offsetHeight;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
-                    }
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            });
-
-            const singleHeroImage = document.querySelector(".slideshow-container .slideshow-img");
-            if (singleHeroImage && document.querySelectorAll(".slideshow-container .slideshow-img").length === 1) {
-                singleHeroImage.classList.add('active');
-            }
-
-            // Contact Form Submission
-            const form = document.getElementById('contact-form');
-            const formResult = document.getElementById('form-result');
-            const submitButton = document.getElementById('btnsubmit');
-
-            if (form && formResult && submitButton) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    formResult.innerHTML = "";
-                    formResult.className = "mb-4 text-sm font-body-text";
-
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const message = document.getElementById('message').value.trim();
-
-                    if (name === "" || email === "" || message === "") {
-                        formResult.innerHTML = "Please fill in all required fields.";
-                        formResult.classList.add('text-red-600');
-                        return;
-                    }
-
-                    const formData = new FormData(form);
-                    const object = Object.fromEntries(formData);
-                    const json = JSON.stringify(object);
-
-                    formResult.innerHTML = "Please wait...";
-                    formResult.classList.add('text-dark-blue');
-                    submitButton.disabled = true;
-                    submitButton.classList.add('opacity-50', 'cursor-not-allowed');
-
-                    fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: json
-                    })
-                    .then(async (response) => {
-                        let jsonResponse = await response.json();
-                        if (response.status == 200) {
-                            formResult.innerHTML = "Form submitted successfully! We'll be in touch soon.";
-                            formResult.classList.remove('text-dark-blue');
-                            formResult.classList.add('text-green-600');
-                            form.reset();
-                        } else {
-                            formResult.innerHTML = jsonResponse.message || "An error occurred. Please try again.";
-                            formResult.classList.remove('text-dark-blue');
-                            formResult.classList.add('text-red-600');
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Form submission error:", error);
-                        formResult.innerHTML = "Something went wrong! Please check your connection or try again later.";
-                        formResult.classList.remove('text-dark-blue');
-                        formResult.classList.add('text-red-600');
-                    })
-                    .finally(() => {
-                        submitButton.disabled = false;
-                        submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                    });
-                });
-            }
-
-            const currentYearSpan = document.getElementById('currentYear');
-            if (currentYearSpan) {
-                currentYearSpan.textContent = new Date().getFullYear();
-            }
-        });
-    </script>
+    <!-- Link to your external JavaScript file, deferred to load after HTML parsing -->
+    <script src="script.js" defer></script>
 </body>
 </html>

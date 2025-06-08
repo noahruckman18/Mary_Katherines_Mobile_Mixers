@@ -1,161 +1,330 @@
-/* Custom Styles & Animations */
+/* style.css for Mary Katherine's Mobile Mixers - Blended Version */
+
+:root {
+    --mk-dark-blue: #102C57;
+    --mk-primary-pink: #F8C9C9;
+    --mk-accent-pink: #FFD1D1;
+    --mk-button-hover-blue: #1a3b70;
+    --mk-body-bg: #FFF8F8; /* Original light pinkish body bg */
+    --mk-body-bg-alt: #FAF7F2; /* New warmer off-white for sections */
+    --mk-section-bg-pink: #F8C9C9;
+    --mk-text-dark: #374151; /* Tailwind gray-700 equivalent */
+    --mk-text-on-dark: #F8C9C9;
+    --mk-white: #FFFFFF;
+    --mk-faq-question-hover-bg: #fdecec;
+    --mk-border-color: #e5e7eb; /* Light gray for borders */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #FFF8F8;
+    color: var(--mk-text-dark);
+    background-color: var(--mk-body-bg);
+    line-height: 1.7;
 }
 
-.font-fancy {
+.font-dancing-script {
     font-family: 'Dancing Script', cursive;
 }
 
-.font-body-text {
-    font-family: 'Cardo', serif;
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Loader Styles */
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #F8C9C9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    flex-direction: column;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
+/* Header Styling */
+#header {
+    background-color: rgba(248, 201, 201, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+#header.scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(248, 201, 201, 0.95);
 }
 
-.martini-glass {
-    width: 100px; /* Max width of the glass top */
-    height: 120px; /* Total height for the animation container */
+.nav-link {
+    color: var(--mk-dark-blue);
+    font-weight: 500;
     position: relative;
+    padding-bottom: 0.25rem;
+    transition: color 0.3s ease;
 }
 
-.martini-glass .bowl {
-    width: 100px;  /* Defines the top width of the V-shape */
-    height: 70px; /* Height of the V-shape */
-    background-color: #102C57; /* This acts as the border color */
-    clip-path: polygon(0% 0%, 100% 0%, 50% 100%); /* V-shape: top-left, top-right, bottom-center */
+.nav-link::after {
+    content: '';
     position: absolute;
-    top: 0; /* Bowl starts at the top of .martini-glass */
+    bottom: 0;
     left: 0;
-    border: none;
-    border-radius: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--mk-dark-blue);
+    transition: width 0.3s ease;
 }
 
-.martini-glass .liquid {
-    /* Adjusted for precise V-shape insetting */
-    top: 8px;
-    left: 12.5px; /* (100px bowl_width - 75px new_liquid_width) / 2 */
-    width: 75px;  /* Narrower width */
-    height: 45%; /* Results in 54px physical height (70_bowl_h - 8_top_m - 8_bottom_m) */
-    background-color: #FF69B4;
-    position: absolute;
-    clip-path: polygon(50% 100%, 0% 0%, 100% 0%); /* V-shape, point at its own bottom */
-    border-radius: 0;
-    transform-origin: 50% 100%;
-    transform: scale(0);
-    animation: fill-from-bottom 2.5s ease-out forwards;
+.nav-link:hover {
+    color: var(--mk-button-hover-blue);
 }
 
-@keyframes fill-from-bottom {
-    0% {
-        transform: scale(0);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.martini-glass .stem {
-    width: 8px;
-    height: 30px;
-    background-color: #102C57;
-    position: absolute;
-    top: 70px; /* Directly below the 70px tall bowl */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.martini-glass .base {
-    width: 50px;
-    height: 8px;
-    background-color: #102C57;
-    border-radius: 4px;
-    position: absolute;
-    top: 100px; /* Below the stem (70px bowl + 30px stem) */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#loader p {
-    margin-top: 20px;
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
-    color: #102C57;
-}
-
-.slideshow-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+.nav-link:hover::after {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.slideshow-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.slideshow-img.active {
-    opacity: 1;
+    background-color: var(--mk-button-hover-blue);
 }
 
-.bg-primary-pink { background-color: #F8C9C9; }
-.text-primary-pink { color: #F8C9C9; }
-.border-primary-pink { border-color: #F8C9C9; }
+.mobile-nav-link {
+    color: var(--mk-dark-blue);
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.mobile-nav-link:hover {
+    background-color: var(--mk-accent-pink);
+    color: var(--mk-dark-blue);
+}
 
-.bg-dark-blue { background-color: #102C57; }
-.text-dark-blue { color: #102C57; }
-.border-dark-blue { border-color: #102C57; }
-
-.bg-accent-pink { background-color: #FFD1D1; }
-.text-accent-pink { color: #FFD1D1; }
-
-.btn-primary {
-    background-color: #102C57;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+/* Hero Button Styling */
+.hero-section a.hero-button {
+    background-color: var(--mk-dark-blue) !important;
+    color: var(--mk-white) !important;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    border-radius: 0.375rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.btn-primary:hover {
-    background-color: #1a3b70;
+.hero-section a.hero-button:hover {
+    background-color: var(--mk-button-hover-blue) !important;
+    transform: translateY(-2px);
 }
 
+/* Section Backgrounds */
+.bg-intro-section {
+    background-color: var(--mk-body-bg-alt);
+}
+#services-intro.py-16 { /* Renamed from #services */
+    background-color: var(--mk-body-bg);
+}
+#service-details.py-16 { /* Renamed from #dry-hire-details */
+     background-color: var(--mk-body-bg-alt);
+}
+#about.py-16 {
+    background-color: var(--mk-body-bg);
+}
+#about > .container > div {
+     background-color: var(--mk-white);
+}
+#faq.py-16 {
+     background-color: var(--mk-body-bg-alt);
+}
+#contact.py-16 {
+    background-color: var(--mk-body-bg);
+}
+
+/* Service Card Styling (Single Offering Focus) */
+.service-card-main { /* For the primary service description card */
+    background-color: var(--mk-white);
+    border: 1px solid var(--mk-border-color);
+    box-shadow: 0 8px 25px rgba(16, 44, 87, 0.07);
+    border-radius: 0.5rem;
+    padding: 2rem 2.5rem;
+}
+.service-card-main h3 {
+    color: var(--mk-dark-blue);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.service-card-main ul {
+    list-style-type: none; /* Removing default list-disc for custom checkmarks */
+    padding-left: 0;
+}
+.service-card-main ul li {
+    padding-left: 1.75rem; /* Space for custom icon */
+    position: relative;
+    margin-bottom: 0.75rem; /* Space between list items */
+    font-size: 1rem; /* Ensure readability */
+}
+.service-card-main ul li::before {
+    content: '\ea5d'; /* Remixicon checkmark */
+    font-family: 'remixicon' !important; /* Ensure Remixicon is used */
+    position: absolute;
+    left: 0;
+    top: 2px; /* Adjust vertical alignment */
+    color: var(--mk-dark-blue);
+    font-size: 1.25rem; /* Icon size */
+    font-weight: bold;
+}
+
+.cta-button { /* General CTA button for service card */
+    background-color: var(--mk-dark-blue);
+    color: var(--mk-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.cta-button:hover {
+    background-color: var(--mk-button-hover-blue);
+    transform: translateY(-1px);
+}
+
+/* General Text Styling */
 .section-title {
     font-family: 'Dancing Script', cursive;
-    color: #102C57;
+    color: var(--mk-dark-blue);
+    font-weight: 700;
+}
+#services-intro h2, #service-details h2, #about h2, #faq h2, #contact h2 { /* Adjusted section IDs */
+    color: var(--mk-dark-blue);
+}
+#about .text-mk-pink {
+    color: var(--mk-dark-blue);
+}
+#about .hover\:text-mk-dark-pink:hover {
+    color: var(--mk-button-hover-blue);
 }
 
-hr {
-    border-top-color: #E5E7EB;
+/* Quote/Callout Section */
+section.bg-mk-dark-blue {
+    background-color: var(--mk-dark-blue);
 }
-.header-sticky-transparent {
-    background-color: rgba(248, 201, 201, 0.85);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+section.bg-mk-dark-blue i.text-mk-pink {
+    color: var(--mk-primary-pink);
 }
+section.bg-mk-dark-blue img.border-mk-pink { /* Style for the logo */
+    border-color: var(--mk-primary-pink);
+    background-color: var(--mk-white); /* Add a white background if logo is transparent */
+    padding: 0.5rem; /* Optional padding around the logo */
+}
+
+/* Contact Form Styling */
+#contact .form-container {
+    background-color: var(--mk-white);
+    padding: 2rem 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.form-label {
+    display: block;
+    color: var(--mk-dark-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--mk-border-color);
+    border-radius: 0.375rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--mk-text-dark);
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--mk-dark-blue);
+    box-shadow: 0 0 0 3px rgba(16, 44, 87, 0.15);
+}
+.form-textarea {
+    min-height: 120px;
+}
+.form-checkbox-group label, .form-radio-group label {
+    font-weight: 500;
+    margin-left: 0.5rem;
+    color: var(--mk-text-dark);
+}
+.form-checkbox-group input[type="checkbox"], .form-radio-group input[type="radio"] {
+    accent-color: var(--mk-dark-blue);
+}
+
+#submit-button {
+    background-color: var(--mk-dark-blue) !important;
+    color: var(--mk-white) !important;
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 0.375rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#submit-button:hover {
+    background-color: var(--mk-button-hover-blue) !important;
+    transform: translateY(-1px);
+}
+#form-result.text-mk-dark-blue {
+    color: var(--mk-dark-blue);
+}
+
+/* Footer Styling */
+footer.bg-mk-dark-blue {
+    background-color: var(--mk-dark-blue);
+}
+footer h3.font-dancing-script, footer p, footer a.text-mk-light-gray {
+    color: var(--mk-text-on-dark);
+}
+footer a.text-mk-light-gray:hover {
+    color: var(--mk-white);
+}
+footer .social-icon i {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+footer .social-icon:hover i {
+    color: var(--mk-white);
+    transform: scale(1.1);
+}
+
+/* Loader (Keep As Is) */
+#loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--mk-primary-pink); display: flex; justify-content: center; align-items: center; z-index: 9999; flex-direction: column; opacity: 1; transition: opacity 0.5s ease-out; }
+.martini-glass { width: 100px; height: 120px; position: relative; }
+.martini-glass .bowl { width: 100px; height: 70px; background-color: var(--mk-dark-blue); clip-path: polygon(0% 0%, 100% 0%, 50% 100%); position: absolute; top: 0; left: 0; border: none; border-radius: 0; }
+.martini-glass .liquid { top: 8px; left: 12.5px; width: 75px; height: 45%; background-color: var(--mk-accent-pink); position: absolute; clip-path: polygon(50% 100%, 0% 0%, 100% 0%); border-radius: 0; transform-origin: 50% 100%; transform: scale(0); animation: fill-from-bottom 2.5s ease-out forwards; }
+@keyframes fill-from-bottom { 0% { transform: scale(0); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
+.martini-glass .stem { width: 8px; height: 30px; background-color: var(--mk-dark-blue); position: absolute; top: 70px; left: 50%; transform: translateX(-50%); }
+.martini-glass .base { width: 50px; height: 8px; background-color: var(--mk-dark-blue); border-radius: 4px; position: absolute; top: 100px; left: 50%; transform: translateX(-50%); }
+#loader p { margin-top: 20px; font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--mk-dark-blue); }
+
+/* FAQ Accordion Styles */
+.faq-item { border-bottom: 1px solid var(--mk-accent-pink); background-color: var(--mk-white); border-radius: 0.375rem; margin-bottom: 0.75rem; box-shadow: 0 3px 10px rgba(0,0,0,0.04); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { transition: background-color 0.3s ease; padding: 1rem 1.25rem; cursor: pointer; } /* Ensure button has padding */
+.faq-question:hover { background-color: var(--mk-faq-question-hover-bg); }
+.faq-question h3 { 
+    font-weight: 600; 
+    /* flex-1 min-w-0 mr-4 are applied directly in HTML */
+}
+.faq-question i { 
+    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0; 
+}
+.faq-question i.rotate-180 { transform: rotate(180deg); }
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    /* Only transition max-height */
+    transition: max-height 0.5s ease-in-out; 
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    /* Set initial vertical padding to 0 */
+    padding-top: 0;
+    padding-bottom: 0;
+    color: var(--mk-text-dark);
+    font-size: 0.95rem;
+}
+.faq-answer.open {
+    /* Apply padding when open, this will be part of scrollHeight calculation */
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem;
+}
+
+/* Utility Classes (Tailwind might override these if not specific enough, but good for fallback) */
+.text-mk-dark-blue { color: var(--mk-dark-blue); }
+.text-mk-pink { color: var(--mk-primary-pink); }
+.bg-mk-pink { background-color: var(--mk-primary-pink); }
+.bg-mk-dark-blue { background-color: var(--mk-dark-blue); }
+.hover\:bg-mk-dark-pink:hover { background-color: var(--mk-accent-pink); }
